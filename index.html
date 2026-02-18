@@ -29,7 +29,7 @@
   <!-- Header -->
   <header class="border-b border-zinc-800/50 sticky top-0 bg-zinc-950/80 backdrop-blur-xl z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <span class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+      <span class="text-lg font-bold bg-gradient-to-b from-blue-600 to-cyan-500 bg-clip-text text-transparent">
         DR
       </span>
       <div class="flex gap-6 items-center">
@@ -83,7 +83,6 @@
         </a>
         </div>
       </div>
-
       <svg class="hidden md:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="600" height="520">
       <defs>
 
@@ -326,7 +325,7 @@
 
         <!-- ── BOOT ── -->
         <text x="190" y="92"  font-size="8.5" fill="#93c5fd" class="L01">&gt; boot david_r.exe &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; [OK]</text>
-        <text x="209" y="105" font-size="8.5" fill="#475569" font-style="italic" class="L02">&#8627; coffee_count: 2 &nbsp;&nbsp;*(loading coffee #3)*</text>
+        <text x="209" y="106" font-size="8.5" fill="#475569" font-style="italic" class="L02">&#8627; coffee_count: 2 &nbsp;&nbsp;*(loading coffee #3)*</text>
         <text x="190" y="122" font-size="8.5" fill="#93c5fd" class="L03">&gt; kernel: logic_core v&#8734; &nbsp;&#9670; conscience: loaded</text>
         <text x="190" y="136" font-size="8.5" fill="#93c5fd" class="L04">&gt; entropy: nominal &nbsp;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632; 97%</text>
         <text x="209" y="149" font-size="7.5" fill="#334155" font-style="italic" class="L05">&nbsp&nbsp;&#183;&#183;&#183; resolving remaining 3%&#183;&#183;&#183;</text>
@@ -452,31 +451,26 @@
             <div class="text-sm font-medium text-zinc-200 mb-1">Process Acceleration</div>
             <div class="text-xs text-zinc-500">Workflow automation</div>
           </div>
-          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" height="80">
+          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80">
             <defs>
-              <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="boltGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:#135ffb"/>
                 <stop offset="100%" style="stop-color:#22d3ee"/>
+              </linearGradient>
+              <linearGradient id="boltGradFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.18"/>
+                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.1"/>
               </linearGradient>
               <filter id="boltGlow" x="-40%" y="-40%" width="180%" height="180%">
                 <feGaussianBlur stdDeviation="2.5" result="b"/>
                 <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
-              <filter id="subtleGlow" x="-60%" y="-60%" width="220%" height="220%">
-                <feGaussianBlur stdDeviation="4"/>
-              </filter>
             </defs>
 
-            <!-- Soft ambient glow behind bolt -->
-            <ellipse cx="30" cy="30" rx="23" ry="23" fill="#135ffb" opacity="0.04" filter="url(#subtleGlow)"/>
-
             <!-- Lightning bolt -->
-            <path d="M39,5 L18,32.5 L28,32.5 L17,56 L44,26.5 L32,26.5 Z"
-                  fill="url(#boltGrad)" filter="url(#boltGlow)" opacity="0.92"/>
-
-            <!-- Thin outline version on top for crispness -->
-            <path d="M39,5 L18,32.5 L28,32.5 L17,56 L44,26.5 L32,26.5 Z"
-                  fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            <polygon points="47,8 28,44 40,44 33,72 56,36 43,36"
+                    fill="url(#boltGradFill)" stroke="url(#boltGrad)" stroke-width="2"
+                    stroke-linejoin="round" filter="url(#boltGlow)"/>
 
           </svg>
         </div>
@@ -486,94 +480,46 @@
             <div class="text-sm font-medium text-zinc-200 mb-1">Productivity Increase</div>
             <div class="text-xs text-zinc-500">ETL pipeline engineering</div>
           </div>
-          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80">
+          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
             <defs>
-              <linearGradient id="clockRing" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.7"/>
-                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.5"/>
-              </linearGradient>
-              <linearGradient id="handGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.5"/>
+              <linearGradient id="barGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.4"/>
                 <stop offset="100%" style="stop-color:#135ffb"/>
               </linearGradient>
-              <linearGradient id="handGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.5"/>
+              <linearGradient id="barGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#1c8af5;stop-opacity:0.4"/>
+                <stop offset="100%" style="stop-color:#1c8af5"/>
+              </linearGradient>
+              <linearGradient id="barGrad3" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.4"/>
                 <stop offset="100%" style="stop-color:#22d3ee"/>
               </linearGradient>
-              <filter id="handGlow" x="-80%" y="-80%" width="260%" height="260%">
-                <feGaussianBlur stdDeviation="2.5" result="b"/>
+              <filter id="barGlow1" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="1.8" result="b"/>
                 <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
-              <filter id="ringGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <filter id="barGlow2" x="-40%" y="-40%" width="180%" height="180%">
                 <feGaussianBlur stdDeviation="2" result="b"/>
                 <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
-              <filter id="centerGlow" x="-150%" y="-150%" width="400%" height="400%">
-                <feGaussianBlur stdDeviation="3.5" result="b"/>
+              <filter id="barGlow3" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2.5" result="b"/>
                 <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
 
-            <!-- Clock center: x=52, y=40, radius=28 -->
+            <!-- Three rising bars — no fill, stroked outlines only -->
+            <!-- Bar 1 — shortest -->
+            <rect x="12" y="44" width="14" height="24" rx="2.5"
+                  fill="none" stroke="url(#barGrad1)" stroke-width="2" filter="url(#barGlow1)"/>
 
-            <!-- Outer ambient glow -->
-            <circle cx="40" cy="40" r="30" fill="#135ffb" opacity="0.03" filter="url(#ringGlow)"/>
+            <!-- Bar 2 — mid -->
+            <rect x="33" y="28" width="14" height="40" rx="2.5"
+                  fill="none" stroke="url(#barGrad2)" stroke-width="2" filter="url(#barGlow2)"/>
 
-            <!-- Clock face ring — clean thin circle -->
-            <circle cx="40" cy="40" r="30" fill="none" stroke="url(#clockRing)" stroke-width="1.5" filter="url(#ringGlow)"/>
-            <!-- Inner face — very subtle fill -->
-            <circle cx="40" cy="40" r="30" fill="rgba(19, 95, 251,0.03)"/>
-
-            <!-- Hour tick marks — 12 positions, short and minimal -->
-            <!-- 12 o'clock -->
-            <line x1="40" y1="13.5" x2="40" y2="17.5" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- 3 o'clock -->
-            <line x1="66.5" y1="40" x2="62.5" y2="40" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- 6 o'clock -->
-            <line x1="40" y1="66.5" x2="40" y2="62.5" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- 9 o'clock -->
-            <line x1="13.5" y1="40" x2="17.5" y2="40" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- Intermediate ticks — thinner, shorter -->
-            <!-- 1 o'clock: 30deg -->
-            <line x1="54" y1="19" x2="52.3" y2="22" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-            <!-- 2 o'clock: 60deg -->
-            <line x1="64.2" y1="26" x2="61.5" y2="27.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-            <!-- 4 o'clock: 120deg -->
-            <line x1="64.2" y1="54" x2="61.5" y2="52.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-            <!-- 5 o'clock: 150deg -->
-            <line x1="54" y1="61" x2="52.3" y2="58" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-            <!-- 7 o'clock: 210deg -->
-            <line x1="26" y1="61" x2="27.7" y2="58" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-            <!-- 8 o'clock: 240deg -->
-            <line x1="15.8" y1="54" x2="18.5" y2="52.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-            <!-- 10 o'clock: 300deg -->
-            <line x1="15.8" y1="26" x2="18.5" y2="27.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-            <!-- 11 o'clock: 330deg -->
-            <line x1="26" y1="19" x2="27.7" y2="22" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
-
-            <!-- Speed arc — sweeping motion trail on the outer ring, ~10 to 2 o'clock -->
-            <path d="M19,17 A28,28 0 0,1 61,17" fill="none" stroke="rgba(19, 95, 251,0.2)" stroke-width="4" stroke-linecap="round"/>
-
-            <!-- Minute hand — pointing toward ~1:55 (fast forward feel), long -->
-            <!-- Angled to ~340deg (just past 11, racing toward 12) -->
-            <line x1="40" y1="40"
-                  x2="34.2" y2="16.8"
-                  stroke="url(#handGrad2)" stroke-width="1.8" stroke-linecap="round" filter="url(#handGlow)"/>
-
-            <!-- Hour hand — pointing toward ~3 o'clock, shorter -->
-            <line x1="40" y1="40"
-                  x2="58" y2="34"
-                  stroke="url(#handGrad)" stroke-width="2.2" stroke-linecap="round" filter="url(#handGlow)"/>
-
-            <!-- Motion streaks behind minute hand — speed sensation -->
-            <line x1="40" y1="40" x2="30" y2="18.6" stroke="rgba(34,211,238,0.08)" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="40" y1="40" x2="25" y2="23" stroke="rgba(34,211,238,0.03)" stroke-width="3" stroke-linecap="round"/>
-
-            <!-- Center pivot dot -->
-            <circle cx="40" cy="40" r="3" fill="#135ffb" opacity="0.15" filter="url(#centerGlow)"/>
-            <circle cx="40" cy="40" r="2" fill="#135ffb" opacity="0.9"/>
-            <circle cx="40" cy="40" r="1" fill="rgba(255,255,255,0.8)"/>
-
+            <!-- Bar 3 — tallest -->
+            <rect x="54" y="12" width="14" height="56" rx="2.5"
+                  fill="none" stroke="url(#barGrad3)" stroke-width="2" filter="url(#barGlow3)"/>
           </svg>
         </div>
         <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
@@ -582,61 +528,49 @@
             <div class="text-sm font-medium text-zinc-200 mb-1">Daily Time Reduction</div>
             <div class="text-xs text-zinc-500">Database optimization</div>
           </div>
-          <svg class="basis-1/4 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 80" height="80">
+          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="60" height="80">
             <defs>
-              <linearGradient id="fTop" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.5"/>
-                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.32"/>
-              </linearGradient>
-              <linearGradient id="fMid" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.42"/>
-                <stop offset="100%" style="stop-color:#135ffb;stop-opacity:0.55"/>
-              </linearGradient>
-              <linearGradient id="fNeck" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.6"/>
-                <stop offset="100%" style="stop-color:#135ffb;stop-opacity:0.8"/>
-              </linearGradient>
-              <linearGradient id="dropG" x1="20%" y1="0%" x2="80%" y2="100%">
+              <linearGradient id="hourGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:#135ffb"/>
-                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.85"/>
+                <stop offset="100%" style="stop-color:#22d3ee"/>
               </linearGradient>
-              <filter id="funnelF" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="1.5" result="b"/>
-                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-              <filter id="dropF" x="-120%" y="-120%" width="340%" height="340%">
-                <feGaussianBlur stdDeviation="4" result="b"/>
+              <filter id="hourGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="1.8" result="b"/>
                 <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
 
-            <!-- Funnel centered at x=55 -->
-            <!-- Top wide section -->
-            <path d="M7,10 L43,10 L36,21 L14,21 Z"
-                  fill="url(#fTop)" filter="url(#funnelF)"/>
-            <!-- Top rim highlight -->
-            <line x1="7" y1="10" x2="43" y2="10"
-                  stroke="rgba(255,255,255,0.11)" stroke-width="1" stroke-linecap="round"/>
+            <path d="
+              M20,10 L60,10 L60,17 L20,17 L20,10 Z
+              M20,63 L60,63 L60,70 L20,70 L20,63 Z
+            " fill="none" stroke="url(#hourGrad)" stroke-width="1.5" stroke-linejoin="round" filter="url(#hourGlow)"/>
 
-            <!-- Narrowing mid section -->
-            <path d="M14,22 L36,22 L31,33 L19,33 Z"
-                  fill="url(#fMid)"/>
+            <!-- Hourglass sides + cap connectors all one path -->
+            <path d="
+              M20,10
+              L60,10
+              L60,17
+              L57,17
+              L57,27 L42,40 L56,53
+              L57,63
+              L60,63
+              L60,70
+              L20,70
+              L20,63
+              L23,63
+              L23,53 L38,40 L23,27
+              L23,17
+              L20,17
+              Z"
+              fill="none" stroke="url(#hourGrad)" stroke-width="1.5"
+              stroke-linejoin="round" stroke-linecap="round"
+              filter="url(#hourGlow)"/>
 
-            <!-- Neck -->
-            <rect x="19" y="34" width="12" height="7" rx="1.5"
-                  fill="url(#fNeck)"/>
+            <!-- SAND: large filled house shape parallel to interior bottom (y=63) -->
+            <path d="M27,60 L30,54 L40,48 L50,54 L53,60 Z"
+              fill="url(#hourGrad)"
+              stroke-linejoin="round" filter="url(#hourGlow)"/>
 
-            <!-- GAP — 7px breathing room -->
-
-            <!-- Droplet glow — rendered first so it sits behind the crisp drop -->
-            <ellipse cx="25" cy="59" rx="12" ry="12" fill="#22d3ee" opacity="0.1" filter="url(#dropF)"/>
-
-            <!-- Drop shape — teardrop, tip pointing up, shifted down for gap -->
-            <path d="M25,50 Q32,55 32,60 Q32,67 25,67 Q18,67 18,60 Q18,55 25,50 Z"
-                  fill="url(#dropG)" filter="url(#dropF)"/>
-            <!-- Inner specular highlight -->
-            <ellipse cx="22.5" cy="57" rx="1.8" ry="2.8"
-                    fill="rgba(255,255,255,0.22)" transform="rotate(20,22.5,57)"/>
           </svg>
         </div>
       </div>
@@ -652,8 +586,14 @@
         <div class="p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg hover:border-cyan-500/50 transition group">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-zinc-500/10 border border-zinc-800 rounded-lg flex items-center justify-center group-hover:border-cyan-500/50 transition text-cyan-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                <defs>
+                  <linearGradient id="frontGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#135ffb"/>
+                    <stop offset="100%" style="stop-color:#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                  <path stroke="url(#frontGrad)" stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
             <h3 class="text-xs font-medium text-zinc-600 uppercase tracking-wider">Frontend</h3>
@@ -672,8 +612,14 @@
         <div class="p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg hover:border-cyan-500/50 transition group">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-zinc-500/10 border border-zinc-800 rounded-lg flex items-center justify-center group-hover:border-cyan-500/50 transition text-cyan-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                <defs>
+                  <linearGradient id="backGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#135ffb"/>
+                    <stop offset="100%" style="stop-color:#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                <path stroke="url(#backGrad)" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
               </svg>
             </div>
             <h3 class="text-xs font-medium text-zinc-600 uppercase tracking-wider">Backend</h3>
@@ -691,8 +637,14 @@
         <div class="p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg hover:border-cyan-500/50 transition group">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-zinc-500/10 border border-zinc-800 rounded-lg flex items-center justify-center group-hover:border-cyan-500/50 transition text-cyan-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                <defs>
+                  <linearGradient id="dataGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#135ffb"/>
+                    <stop offset="100%" style="stop-color:#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                <path stroke="url(#dataGrad)" stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
               </svg>
             </div>
             <h3 class="text-xs font-medium text-zinc-600 uppercase tracking-wider">Database</h3>
@@ -710,8 +662,14 @@
         <div class="p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg hover:border-cyan-500/50 transition group">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-zinc-500/10 border border-zinc-800 rounded-lg flex items-center justify-center group-hover:border-cyan-500/50 transition text-cyan-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                <defs>
+                  <linearGradient id="toolGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#135ffb"/>
+                    <stop offset="100%" style="stop-color:#22d3ee"/>
+                  </linearGradient>
+                </defs>
+                <path stroke="url(#toolGrad)" stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </div>
             <h3 class="text-xs font-medium text-zinc-600 uppercase tracking-wider">Tools & DevOps</h3>
@@ -745,15 +703,15 @@
               <h3 class="text-lg font-semibold mb-4">Software Developer (Contract)</h3>
               <ul class="space-y-3 mb-6">
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Reduced daily batch processing by 5 hours through T-SQL optimization</span>
                 </li>
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Automated realtor data lifecycle with Python & HubSpot API</span>
                 </li>
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Built real estate property update workflows with OData APIs</span>
                 </li>
               </ul>
@@ -780,19 +738,19 @@
               <h3 class="text-lg font-semibold mb-4">Software Developer</h3>
               <ul class="space-y-3 mb-6">
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Led full-stack C# WPF application from conception to deployment</span>
                 </li>
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Architected production database schema and complex stored procedures</span>
                 </li>
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Engineered ETL pipeline saving 15 hours/week per employee</span>
                 </li>
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Achieved $80K annual savings and 80% reduction in insurance rejections</span>
                 </li>
               </ul>
@@ -821,15 +779,15 @@
               <h3 class="text-lg font-semibold mb-4">Business Intelligence Developer</h3>
               <ul class="space-y-3 mb-6">
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Migrated legacy Hyperion infrastructure to Tableau & Power BI</span>
                 </li>
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Built automated dashboards for helicopter manufacturing workflow</span>
                 </li>
                 <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="text-cyan-500 flex-shrink-0 mt-1">▹</span>
+                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
                   <span>Enabled real-time decision-making vs. delayed manual reporting</span>
                 </li>
               </ul>
