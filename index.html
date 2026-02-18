@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Rodriguez - Full-Stack Developer Portfolio</title>
-  <link href="./output.css" rel="stylesheet">
+  <!-- <link href="./output.css" rel="stylesheet"> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>   
   <style>
     @keyframes pulse {
       0%, 100% { opacity: 1; }
@@ -83,9 +84,299 @@
         </div>
       </div>
 
-      <div class="hidden md:block">
-        <img class="opacity-60" src="https://lh3.googleusercontent.com/rd-d/ALs6j_EUEYqX0lXQe7WoMyLYSC4j7jCNym3yEcnSRwWrYLz6gzCKbXAkOpsM9ce6PdIATBsp0kSmiHlils85Z8SWXlaEFKczYooBnUEBufkActF5TL0vIsXT0uL9WrkarII5gj7cWft733Tv3sBV5ZJlnmnPHslmJEYXjZDQRmPJDtiDu8CS5FFoLad-IILxnP9BrUnVODHO4t9Lbr1VCW8YPKHMppYIAbBl55_AxK_etAGIzwm_LONrBAT3NbIFmIqmExFER-dofKSmwCwLX-37N43Psrvztw0fFxwXDXk0bv6QObgjXWyTbAEnOeyAwuSG-IiCQbRPvQYYt7NjtTbDL_wfH448gLgRM5nq0xF5-kj3_ZFegh6tAAidIMMc5UJrsRN9fepahXmmyEHMJYzSslY1uVwcCo_WouHxGfFjG3CMW9WLhS6R0WBWnwfQ4FTRIFdY0OVTxRDQ9gqOxPsikFdw-9DUO_TV2K340LjC1WeLB5rhNDgPDorXIGIn9RJ4jNBS82BF8WDx8kZyHM2SGemCfG--EmQCkxr1nBjOMh-2yBqCTqF18TfcjCHOsmkYyBpuwUu5Kt_ajGypZ-5qMZVt8UOt7-d2Hokf-kS9QWuh3TkD8GxDqqqj_k54LGARcbfdU0b8chONbfkyXZrRad4KvZt78Z-eSPk5Lc8Is5s5m2pG1RlWHMUebxA8oVk1R9kZSkw5AYzcRDXSI63btuJxzEM_J3wSRZHqfSNQDrhWzpmQkMaKuHHSbFZrp7Bdh3zl339-Ak_Pp_7vKwp83xs2xkETiYYfCJwWi9-6hf4xUiwXRYOhCOcLdY_mXoAWQi7256z8dE0oNGP5kkMG1UM-VNmOY3GrxHF2zGGvE2SeNOplcOdjfRcnijYD7c7uNvNde5X3_HDVcYbSlbiPFrjULyhxMu1Kddl9FwNw4Qee72Rt3oSeYi7rzKEKbrFJBK_ZLGwuMe6hTU4qGpuqbEbivDY3ZxEitcjvN0q4yyyQqAeLsZ8IT7-mnHUGK5UdGmiSx4Je1QFVt9rANQ6Vu9ytrK4bYPCiw0zhxZSrSA=w1580-h1342?auditContext=prefetch" width="600"/>
-      </div>
+      <svg class="hidden md:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="600" height="520">
+      <defs>
+
+        <!-- ── Gradients ── -->
+        <linearGradient id="gV" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#135ffb"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
+
+        <linearGradient id="gH" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#135ffb"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
+
+        <!-- Glass panel — transparent, fades fully on sides -->
+        <linearGradient id="glassFade" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#0a1628" stop-opacity="0"/>
+          <stop offset="10%"  stop-color="#0a1628" stop-opacity="0.26"/>
+          <stop offset="50%"  stop-color="#0a1628" stop-opacity="0.30"/>
+          <stop offset="90%"  stop-color="#0a1628" stop-opacity="0.26"/>
+          <stop offset="100%" stop-color="#0a1628" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Border lines — fade to nothing at edges -->
+        <linearGradient id="borderFade" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#135ffb" stop-opacity="0"/>
+          <stop offset="12%"  stop-color="#135ffb" stop-opacity="0.28"/>
+          <stop offset="88%"  stop-color="#22d3ee" stop-opacity="0.28"/>
+          <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- ── Filters ── -->
+
+        <!-- Brace edge glow -->
+        <filter id="bGlow" x="-50%" y="-4%" width="200%" height="108%">
+          <feGaussianBlur stdDeviation="5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+
+        <!-- Prompt line glow -->
+        <filter id="promptGlow" x="-8%" y="-80%" width="116%" height="260%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+
+        <!-- Ambient bloom behind braces -->
+        <filter id="amb" x="-50%" y="-30%" width="200%" height="160%">
+          <feGaussianBlur stdDeviation="30"/>
+        </filter>
+
+        <!-- Clip panel content -->
+        <clipPath id="panelClip">
+          <rect x="182" y="72" width="286" height="414"/>
+        </clipPath>
+
+      </defs>
+
+      <!-- ══════════════════════════════════════════════
+           STYLES
+      ═══════════════════════════════════════════════ -->
+      <style>
+        .mono { font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; }
+
+        /* ── Boot flicker-in animations ──
+           Each line starts at opacity:0, flickers like a CRT
+           warming up, then holds its final resting opacity.
+           animation-fill-mode: both = starts at 0, stays at end state.
+        */
+        @keyframes flickerOutput {
+          0%   { opacity: 0   }
+          8%   { opacity: 0.7 }
+          14%  { opacity: 0.1 }
+          22%  { opacity: 0.8 }
+          30%  { opacity: 0.4 }
+          42%  { opacity: 0.82}
+          100% { opacity: 0.82}
+        }
+        @keyframes flickerAside {
+          0%   { opacity: 0   }
+          10%  { opacity: 0.4 }
+          18%  { opacity: 0.05}
+          32%  { opacity: 0.48}
+          100% { opacity: 0.48}
+        }
+        @keyframes flickerCyan {
+          0%   { opacity: 0   }
+          7%   { opacity: 0.8 }
+          13%  { opacity: 0.15}
+          24%  { opacity: 0.90}
+          100% { opacity: 0.90}
+        }
+        @keyframes flickerPrompt {
+          0%   { opacity: 0   }
+          6%   { opacity: 0.85}
+          13%  { opacity: 0.2 }
+          22%  { opacity: 1.0 }
+          100% { opacity: 1.0 }
+        }
+
+        /* Brace slow breath */
+        @keyframes braceBreath  { 0%,100%{ opacity:.90 } 50%{ opacity:.55 } }
+        @keyframes braceGBreath { 0%,100%{ opacity:.42 } 50%{ opacity:.16 } }
+
+        /* Ambient pulse */
+        @keyframes ambPulse { 0%,100%{ opacity:.07 } 50%{ opacity:.14 } }
+
+        /* Cursor blink — starts after all lines are in */
+        @keyframes blink { 0%,48%{ opacity:1 } 49%,100%{ opacity:0 } }
+
+        .bC   { animation: braceBreath  5.5s ease-in-out infinite }
+        .bG   { animation: braceGBreath 5.5s ease-in-out infinite }
+        .ambE { animation: ambPulse     5.0s ease-in-out infinite }
+
+        /* ── Line-by-line boot delays ──
+           Duration 0.55s per line, staggered 0.20s apart.
+           Total: ~5s for full terminal to appear.
+        */
+        .L01 { animation: flickerOutput 0.55s ease-out  0.10s both }
+        .L02 { animation: flickerOutput 0.55s ease-out  0.30s both }
+        .L03 { animation: flickerOutput 0.55s ease-out  0.50s both }
+        .L04 { animation: flickerAside  0.55s ease-out  0.68s both }
+
+        .L05 { animation: flickerOutput 0.55s ease-out  0.90s both }
+        .L06 { animation: flickerOutput 0.55s ease-out  1.10s both }
+        .L07 { animation: flickerOutput 0.55s ease-out  1.30s both }
+        .L08 { animation: flickerAside  0.55s ease-out  1.48s both }
+
+        .L09 { animation: flickerOutput 0.55s ease-out  1.70s both }
+        .L10 { animation: flickerCyan   0.55s ease-out  1.90s both }
+        .L11 { animation: flickerCyan   0.55s ease-out  2.10s both }
+        .L12 { animation: flickerCyan   0.55s ease-out  2.30s both }
+        .L13 { animation: flickerAside  0.55s ease-out  2.48s both }
+
+        .L14 { animation: flickerOutput 0.55s ease-out  2.70s both }
+        .L15 { animation: flickerOutput 0.55s ease-out  2.90s both }
+        .L16 { animation: flickerAside  0.55s ease-out  3.08s both }
+
+        .L17 { animation: flickerOutput 0.55s ease-out  3.30s both }
+        .L18 { animation: flickerOutput 0.55s ease-out  3.50s both }
+        .L19 { animation: flickerOutput 0.55s ease-out  3.70s both }
+        .L20 { animation: flickerAside  0.55s ease-out  3.88s both }
+
+        .L21 { animation: flickerOutput 0.55s ease-out  4.10s both }
+        .L22 { animation: flickerOutput 0.55s ease-out  4.30s both }
+        .L23 { animation: flickerOutput 0.55s ease-out  4.50s both }
+        .L24 { animation: flickerAside  0.55s ease-out  4.68s both }
+
+        .Ldiv    { animation: flickerAside  0.40s ease-out  4.90s both }
+        .Lprompt { animation: flickerPrompt 0.70s ease-out  5.10s both }
+
+        /* Cursor invisible until after prompt finishes (~5.8s) */
+        .cursor  {
+          opacity: 0;
+          animation: blink 1.05s step-end 5.80s infinite;
+        }
+      </style>
+
+      <!-- ══════════════════════════════════════════════
+           AMBIENT GLOW
+      ═══════════════════════════════════════════════ -->
+      <ellipse cx="325" cy="290" rx="210" ry="210"
+        fill="#135ffb" class="ambE" filter="url(#amb)"/>
+
+      <!-- ══════════════════════════════════════════════
+           GLASS PANEL
+      ═══════════════════════════════════════════════ -->
+      <rect x="178" y="68" width="294" height="422" fill="url(#glassFade)"/>
+
+      <!-- Top hairline -->
+      <line x1="130" y1="68"  x2="520" y2="68"  stroke="url(#borderFade)" stroke-width="0.7"/>
+      <!-- Bottom hairline -->
+      <line x1="130" y1="490" x2="520" y2="490" stroke="url(#borderFade)" stroke-width="0.7"/>
+
+      <!-- ══════════════════════════════════════════════
+           LEFT BRACE  {
+           Spine ~x=126, nub at y=279
+      ═══════════════════════════════════════════════ -->
+      <!-- Glow pass -->
+      <path d="M 196 62
+               C 196 62, 136 66, 126 106
+               L 126 256
+               C 126 256, 98 268, 98 279
+               C 98 279, 98 291, 126 303
+               L 126 452
+               C 126 452, 136 493, 196 496"
+        fill="none" stroke="url(#gV)" stroke-width="11"
+        stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#bGlow)" class="bG"/>
+      <!-- Crisp pass -->
+      <path d="M 196 62
+               C 196 62, 136 66, 126 106
+               L 126 256
+               C 126 256, 98 268, 98 279
+               C 98 279, 98 291, 126 303
+               L 126 452
+               C 126 452, 136 493, 196 496"
+        fill="none" stroke="url(#gV)" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"
+        class="bC"/>
+
+      <!-- ══════════════════════════════════════════════
+           RIGHT BRACE  }
+           Spine ~x=524, nub at y=279
+      ═══════════════════════════════════════════════ -->
+      <!-- Glow pass -->
+      <path d="M 454 62
+               C 454 62, 514 66, 524 106
+               L 524 256
+               C 524 256, 552 268, 552 279
+               C 552 279, 552 291, 524 303
+               L 524 452
+               C 524 452, 514 493, 454 496"
+        fill="none" stroke="url(#gV)" stroke-width="11"
+        stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#bGlow)" class="bG"/>
+      <!-- Crisp pass -->
+      <path d="M 454 62
+               C 454 62, 514 66, 524 106
+               L 524 256
+               C 524 256, 552 268, 552 279
+               C 552 279, 552 291, 524 303
+               L 524 452
+               C 524 452, 514 493, 454 496"
+        fill="none" stroke="url(#gV)" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"
+        class="bC"/>
+
+      <!-- ══════════════════════════════════════════════
+           TERMINAL CONTENT — clipped to panel
+      ═══════════════════════════════════════════════ -->
+      <g clip-path="url(#panelClip)" class="mono">
+
+        <!-- ── SECTION 1: BOOT ── -->
+        <text x="190" y="92"  font-size="7.9" fill="#93c5fd" class="L01">&gt; Initializing david_r.exe ████████████ [OK]</text>
+        <text x="190" y="106" font-size="7.9" fill="#93c5fd" class="L02">&gt; Runtime: Node 20 | Python 3.12 | C# .NET 8</text>
+        <text x="190" y="120" font-size="7.9" fill="#93c5fd" class="L03">&gt; Dependencies resolved. coffee_count: 3</text>
+        <text x="248" y="133" font-size="7.4" fill="#475569" font-style="italic" class="L04">*(acceptable pre-standup level)*</text>
+
+        <!-- ── SECTION 2: STACK ── -->
+        <text x="190" y="150" font-size="7.9" fill="#93c5fd" class="L05">&gt; Frontend: React 18 + Tailwind  [LOADED]</text>
+        <text x="190" y="164" font-size="7.9" fill="#93c5fd" class="L06">&gt; Backend:  Express + Python + C# .NET</text>
+        <text x="190" y="178" font-size="7.9" fill="#93c5fd" class="L07">&gt; DB:       SQL Server | MongoDB | T-SQL</text>
+        <text x="244" y="191" font-size="7.4" fill="#475569" font-style="italic" class="L08">*(yes, hand-written. yes, indexed.)*</text>
+
+        <!-- ── SECTION 3: IMPACT ── -->
+        <text x="190" y="208" font-size="7.9" fill="#93c5fd" class="L09">&gt; Last engagement metrics:</text>
+        <text x="190" y="222" font-size="7.9" fill="#22d3ee" class="L10">&gt; &#9500;&#9472;&#9472; $80K/yr recovered      [FINANCE: HAPPY]</text>
+        <text x="190" y="236" font-size="7.9" fill="#22d3ee" class="L11">&gt; &#9500;&#9472;&#9472; -5h/day on batch ops   [OPS: HAPPIER]</text>
+        <text x="190" y="250" font-size="7.9" fill="#22d3ee" class="L12">&gt; &#9492;&#9472;&#9472; ETL: 15h/wk &#8594; 0h/wk   [MGR: ECSTATIC]</text>
+        <text x="234" y="263" font-size="7.4" fill="#475569" font-style="italic" class="L13">*(someone bought pizza. correlation noted.)*</text>
+
+        <!-- ── SECTION 4: CI/CD ── -->
+        <text x="190" y="280" font-size="7.9" fill="#93c5fd" class="L14">&gt; CI/CD: GitHub &#8594; Render  [&#10003; passing]</text>
+        <text x="190" y="294" font-size="7.9" fill="#93c5fd" class="L15">&gt; Build: clean | Prod: live | Git: no conflicts</text>
+        <text x="240" y="307" font-size="7.4" fill="#475569" font-style="italic" class="L16">*(merge conflicts resolved diplomatically)*</text>
+
+        <!-- ── SECTION 5: VELOCITY ── -->
+        <text x="190" y="324" font-size="7.9" fill="#93c5fd" class="L17">&gt; Process velocity: +75% | Uptime: stable</text>
+        <text x="190" y="338" font-size="7.9" fill="#93c5fd" class="L18">&gt; MERN deployed, CORS config, rate-limited,</text>
+        <text x="190" y="352" font-size="7.9" fill="#93c5fd" class="L19">&gt;   documented, ships on schedule. always.</text>
+        <text x="238" y="365" font-size="7.4" fill="#475569" font-style="italic" class="L20">*(shipped before the retro. wild.)*</text>
+
+        <!-- ── SECTION 6: STATUS ── -->
+        <text x="190" y="382" font-size="7.9" fill="#93c5fd" class="L21">&gt; Available:  full-stack | new problems welcome</text>
+        <text x="190" y="396" font-size="7.9" fill="#93c5fd" class="L22">&gt; Specialty:  legacy rescue, scaling, the kind</text>
+        <text x="190" y="410" font-size="7.9" fill="#93c5fd" class="L23">&gt;   of dashboards execs actually read</text>
+        <text x="234" y="423" font-size="7.4" fill="#475569" font-style="italic" class="L24">*(they asked for pie charts anyway)*</text>
+
+        <!-- ── DIVIDER ── -->
+        <line x1="190" y1="436" x2="460" y2="436"
+          stroke="url(#gH)" stroke-width="0.55" class="Ldiv"/>
+
+        <!-- ── PROMPT ── -->
+        <!-- Glow pass — no inline opacity attr, let animation control it -->
+        <text x="190" y="455" font-size="9" fill="#135ffb"
+          filter="url(#promptGlow)" class="Lprompt">&gt; ready_to_deploy()</text>
+        <!-- Crisp pass on top -->
+        <text x="190" y="455" font-size="9" fill="url(#gH)"
+          class="Lprompt">&gt; ready_to_deploy()</text>
+
+        <!-- Blinking cursor — appears after prompt -->
+        <rect x="327" y="443" width="2.4" height="13"
+          fill="#22d3ee" rx="1" class="cursor"/>
+
+      </g>
+
+    </svg>
 
     </div>
   </section>
@@ -95,25 +386,261 @@
     <div class="max-w-7xl mx-auto">
       <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Measurable Impact</h2>
       <div class="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="w-full max-w-md md:max-w-lg p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
-          <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">$80K+</div>
-          <div class="text-sm font-medium text-zinc-200 mb-1">Annual Cost Savings</div>
-          <div class="text-xs text-zinc-500">Medical billing application</div>
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">$80K+</div>
+            <div class="text-sm font-medium text-zinc-200 mb-1">Annual Cost Savings</div>
+            <div class="text-xs text-zinc-500">Medical billing application</div>
+          </div>
+          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80">
+            <defs>
+              <radialGradient id="coinFill" cx="38%" cy="32%" r="68%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.22"/>
+                <stop offset="100%" style="stop-color:#135ffb;stop-opacity:0.04"/>
+              </radialGradient>
+              <linearGradient id="outerRing" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.9"/>
+                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.6"/>
+              </linearGradient>
+              <linearGradient id="innerRing" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.55"/>
+                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.35"/>
+              </linearGradient>
+              <linearGradient id="dollarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb"/>
+                <stop offset="100%" style="stop-color:#22d3ee"/>
+              </linearGradient>
+              <filter id="coinGlow" x="-35%" y="-35%" width="170%" height="170%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="dollarGlow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="3" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Coin face fill -->
+            <circle cx="40" cy="40" r="30" fill="url(#coinFill)"/>
+
+            <!-- Outer ring -->
+            <circle cx="40" cy="40" r="30"
+                    fill="none" stroke="url(#outerRing)" stroke-width="2"
+                    filter="url(#coinGlow)"/>
+
+            <!-- Inner ring -->
+            <circle cx="40" cy="40" r="23"
+                    fill="none" stroke="url(#innerRing)" stroke-width="1.25"/>
+
+            <!-- Dollar sign — rendered twice: glow pass then crisp pass -->
+            <text x="40" y="52"
+                  text-anchor="middle"
+                  font-size="34"
+                  font-weight="800"
+                  fill="url(#dollarGrad)"
+                  filter="url(#dollarGlow)"
+                  opacity="0.6">$</text>
+
+            <text x="40" y="52"
+                  text-anchor="middle"
+                  font-size="34"
+                  font-weight="800"
+                  fill="url(#dollarGrad)">$</text>
+
+          </svg>
         </div>
-        <div class="w-full max-w-md md:max-w-lg p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
-          <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">5 Hours</div>
-          <div class="text-sm font-medium text-zinc-200 mb-1">Daily Time Reduction</div>
-          <div class="text-xs text-zinc-500">Database optimization</div>
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">75%</div>
+            <div class="text-sm font-medium text-zinc-200 mb-1">Process Acceleration</div>
+            <div class="text-xs text-zinc-500">Workflow automation</div>
+          </div>
+          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" height="80">
+            <defs>
+              <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb"/>
+                <stop offset="100%" style="stop-color:#22d3ee"/>
+              </linearGradient>
+              <filter id="boltGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="subtleGlow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="4"/>
+              </filter>
+            </defs>
+
+            <!-- Soft ambient glow behind bolt -->
+            <ellipse cx="30" cy="30" rx="23" ry="23" fill="#135ffb" opacity="0.04" filter="url(#subtleGlow)"/>
+
+            <!-- Lightning bolt -->
+            <path d="M39,5 L18,32.5 L28,32.5 L17,56 L44,26.5 L32,26.5 Z"
+                  fill="url(#boltGrad)" filter="url(#boltGlow)" opacity="0.92"/>
+
+            <!-- Thin outline version on top for crispness -->
+            <path d="M39,5 L18,32.5 L28,32.5 L17,56 L44,26.5 L32,26.5 Z"
+                  fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+
+          </svg>
         </div>
-        <div class="w-full max-w-md md:max-w-lg p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
-          <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">75%</div>
-          <div class="text-sm font-medium text-zinc-200 mb-1">Process Acceleration</div>
-          <div class="text-xs text-zinc-500">Workflow automation</div>
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">60%</div>
+            <div class="text-sm font-medium text-zinc-200 mb-1">Productivity Increase</div>
+            <div class="text-xs text-zinc-500">ETL pipeline engineering</div>
+          </div>
+          <svg class="basis-1/4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80">
+            <defs>
+              <linearGradient id="clockRing" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.7"/>
+                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.5"/>
+              </linearGradient>
+              <linearGradient id="handGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.5"/>
+                <stop offset="100%" style="stop-color:#135ffb"/>
+              </linearGradient>
+              <linearGradient id="handGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.5"/>
+                <stop offset="100%" style="stop-color:#22d3ee"/>
+              </linearGradient>
+              <filter id="handGlow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="ringGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="centerGlow" x="-150%" y="-150%" width="400%" height="400%">
+                <feGaussianBlur stdDeviation="3.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Clock center: x=52, y=40, radius=28 -->
+
+            <!-- Outer ambient glow -->
+            <circle cx="40" cy="40" r="30" fill="#135ffb" opacity="0.03" filter="url(#ringGlow)"/>
+
+            <!-- Clock face ring — clean thin circle -->
+            <circle cx="40" cy="40" r="30" fill="none" stroke="url(#clockRing)" stroke-width="1.5" filter="url(#ringGlow)"/>
+            <!-- Inner face — very subtle fill -->
+            <circle cx="40" cy="40" r="30" fill="rgba(19, 95, 251,0.03)"/>
+
+            <!-- Hour tick marks — 12 positions, short and minimal -->
+            <!-- 12 o'clock -->
+            <line x1="40" y1="13.5" x2="40" y2="17.5" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- 3 o'clock -->
+            <line x1="66.5" y1="40" x2="62.5" y2="40" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- 6 o'clock -->
+            <line x1="40" y1="66.5" x2="40" y2="62.5" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- 9 o'clock -->
+            <line x1="13.5" y1="40" x2="17.5" y2="40" stroke="rgba(19, 95, 251,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Intermediate ticks — thinner, shorter -->
+            <!-- 1 o'clock: 30deg -->
+            <line x1="54" y1="19" x2="52.3" y2="22" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- 2 o'clock: 60deg -->
+            <line x1="64.2" y1="26" x2="61.5" y2="27.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- 4 o'clock: 120deg -->
+            <line x1="64.2" y1="54" x2="61.5" y2="52.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- 5 o'clock: 150deg -->
+            <line x1="54" y1="61" x2="52.3" y2="58" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- 7 o'clock: 210deg -->
+            <line x1="26" y1="61" x2="27.7" y2="58" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- 8 o'clock: 240deg -->
+            <line x1="15.8" y1="54" x2="18.5" y2="52.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- 10 o'clock: 300deg -->
+            <line x1="15.8" y1="26" x2="18.5" y2="27.5" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- 11 o'clock: 330deg -->
+            <line x1="26" y1="19" x2="27.7" y2="22" stroke="rgba(19, 95, 251,0.25)" stroke-width="1" stroke-linecap="round"/>
+
+            <!-- Speed arc — sweeping motion trail on the outer ring, ~10 to 2 o'clock -->
+            <path d="M19,17 A28,28 0 0,1 61,17" fill="none" stroke="rgba(19, 95, 251,0.2)" stroke-width="4" stroke-linecap="round"/>
+
+            <!-- Minute hand — pointing toward ~1:55 (fast forward feel), long -->
+            <!-- Angled to ~340deg (just past 11, racing toward 12) -->
+            <line x1="40" y1="40"
+                  x2="34.2" y2="16.8"
+                  stroke="url(#handGrad2)" stroke-width="1.8" stroke-linecap="round" filter="url(#handGlow)"/>
+
+            <!-- Hour hand — pointing toward ~3 o'clock, shorter -->
+            <line x1="40" y1="40"
+                  x2="58" y2="34"
+                  stroke="url(#handGrad)" stroke-width="2.2" stroke-linecap="round" filter="url(#handGlow)"/>
+
+            <!-- Motion streaks behind minute hand — speed sensation -->
+            <line x1="40" y1="40" x2="30" y2="18.6" stroke="rgba(34,211,238,0.08)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="40" y1="40" x2="25" y2="23" stroke="rgba(34,211,238,0.03)" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Center pivot dot -->
+            <circle cx="40" cy="40" r="3" fill="#135ffb" opacity="0.15" filter="url(#centerGlow)"/>
+            <circle cx="40" cy="40" r="2" fill="#135ffb" opacity="0.9"/>
+            <circle cx="40" cy="40" r="1" fill="rgba(255,255,255,0.8)"/>
+
+          </svg>
         </div>
-        <div class="w-full max-w-md md:max-w-lg p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
-          <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">60%</div>
-          <div class="text-sm font-medium text-zinc-200 mb-1">Productivity Increase</div>
-          <div class="text-xs text-zinc-500">ETL pipeline engineering</div>
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-2">5 Hours</div>
+            <div class="text-sm font-medium text-zinc-200 mb-1">Daily Time Reduction</div>
+            <div class="text-xs text-zinc-500">Database optimization</div>
+          </div>
+          <svg class="basis-1/4 m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 80" height="80">
+            <defs>
+              <linearGradient id="fTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.5"/>
+                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.32"/>
+              </linearGradient>
+              <linearGradient id="fMid" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.42"/>
+                <stop offset="100%" style="stop-color:#135ffb;stop-opacity:0.55"/>
+              </linearGradient>
+              <linearGradient id="fNeck" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb;stop-opacity:0.6"/>
+                <stop offset="100%" style="stop-color:#135ffb;stop-opacity:0.8"/>
+              </linearGradient>
+              <linearGradient id="dropG" x1="20%" y1="0%" x2="80%" y2="100%">
+                <stop offset="0%" style="stop-color:#135ffb"/>
+                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.85"/>
+              </linearGradient>
+              <filter id="funnelF" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="dropF" x="-120%" y="-120%" width="340%" height="340%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Funnel centered at x=55 -->
+            <!-- Top wide section -->
+            <path d="M7,10 L43,10 L36,21 L14,21 Z"
+                  fill="url(#fTop)" filter="url(#funnelF)"/>
+            <!-- Top rim highlight -->
+            <line x1="7" y1="10" x2="43" y2="10"
+                  stroke="rgba(255,255,255,0.11)" stroke-width="1" stroke-linecap="round"/>
+
+            <!-- Narrowing mid section -->
+            <path d="M14,22 L36,22 L31,33 L19,33 Z"
+                  fill="url(#fMid)"/>
+
+            <!-- Neck -->
+            <rect x="19" y="34" width="12" height="7" rx="1.5"
+                  fill="url(#fNeck)"/>
+
+            <!-- GAP — 7px breathing room -->
+
+            <!-- Droplet glow — rendered first so it sits behind the crisp drop -->
+            <ellipse cx="25" cy="59" rx="12" ry="12" fill="#22d3ee" opacity="0.1" filter="url(#dropF)"/>
+
+            <!-- Drop shape — teardrop, tip pointing up, shifted down for gap -->
+            <path d="M25,50 Q32,55 32,60 Q32,67 25,67 Q18,67 18,60 Q18,55 25,50 Z"
+                  fill="url(#dropG)" filter="url(#dropF)"/>
+            <!-- Inner specular highlight -->
+            <ellipse cx="22.5" cy="57" rx="1.8" ry="2.8"
+                    fill="rgba(255,255,255,0.22)" transform="rotate(20,22.5,57)"/>
+          </svg>
         </div>
       </div>
     </div>
