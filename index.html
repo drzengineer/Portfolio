@@ -256,7 +256,7 @@
       <!-- ══════════════════════════════════════════════
            GLASS PANEL
       ═══════════════════════════════════════════════ -->
-      <rect x="178" y="68" width="294" height="422" fill="url(#glassFade)"/>
+      <rect x="150" y="68" width="350" height="422" fill="url(#glassFade)"/>
 
       <!-- Top hairline -->
       <line x1="130" y1="68"  x2="520" y2="68"  stroke="url(#borderFade)" stroke-width="0.7"/>
@@ -322,52 +322,49 @@
       ═══════════════════════════════════════════════ -->
       <g clip-path="url(#panelClip)" class="mono">
 
-        <!-- ── SECTION 1: BOOT ── -->
-        <text x="180" y="92"  font-size="9" fill="#93c5fd" class="L01">&gt; Initializing david_r.exe ████████████ [OK]</text>
-        <text x="190" y="106" font-size="9" fill="#93c5fd" class="L02">&gt; Runtime: Node 20 | Python 3.12 | C# .NET 8</text>
-        <text x="190" y="120" font-size="9" fill="#93c5fd" class="L03">&gt; Dependencies resolved. coffee_count: 3</text>
-        <text x="248" y="133" font-size="8" fill="#475569" font-style="italic" class="L04">*(acceptable pre-standup level)*</text>
 
-        <!-- ── SECTION 2: STACK ── -->
-        <text x="190" y="150" font-size="9" fill="#93c5fd" class="L05">&gt; Frontend: React 18 + Tailwind  [LOADED]</text>
-        <text x="190" y="164" font-size="9" fill="#93c5fd" class="L06">&gt; Backend:  Express + Python + C# .NET</text>
-        <text x="190" y="178" font-size="9" fill="#93c5fd" class="L07">&gt; DB:       SQL Server | MongoDB | T-SQL</text>
-        <text x="244" y="191" font-size="8" fill="#475569" font-style="italic" class="L08">*(yes, hand-written. yes, indexed.)*</text>
 
-        <!-- ── SECTION 3: IMPACT ── -->
-        <text x="190" y="208" font-size="9" fill="#93c5fd" class="L09">&gt; Last engagement metrics:</text>
-        <text x="190" y="222" font-size="9" fill="#22d3ee" class="L10">&gt; &#9500;&#9472;&#9472; $80K/yr recovered      [FINANCE: HAPPY]</text>
-        <text x="190" y="236" font-size="9" fill="#22d3ee" class="L11">&gt; &#9500;&#9472;&#9472; -5h/day on batch ops   [OPS: HAPPIER]</text>
-        <text x="190" y="250" font-size="9" fill="#22d3ee" class="L12">&gt; &#9492;&#9472;&#9472; ETL: 15h/wk &#8594; 0h/wk   [MGR: ECSTATIC]</text>
-        <text x="234" y="263" font-size="8" fill="#475569" font-style="italic" class="L13">*(someone bought pizza. correlation noted.)*</text>
+        <!-- ── BOOT ── -->
+        <text x="190" y="92"  font-size="8.5" fill="#93c5fd" class="L01">&gt; boot david_r.exe &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; [OK]</text>
+        <text x="209" y="105" font-size="8.5" fill="#475569" font-style="italic" class="L02">&#8627; coffee_count: 2 &nbsp;&nbsp;*(loading coffee #3)*</text>
+        <text x="190" y="122" font-size="8.5" fill="#93c5fd" class="L03">&gt; kernel: logic_core v&#8734; &nbsp;&#9670; conscience: loaded</text>
+        <text x="190" y="136" font-size="8.5" fill="#93c5fd" class="L04">&gt; entropy: nominal &nbsp;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632; 97%</text>
+        <text x="209" y="149" font-size="7.5" fill="#334155" font-style="italic" class="L05">&nbsp&nbsp;&#183;&#183;&#183; resolving remaining 3%&#183;&#183;&#183;</text>
 
-        <!-- ── SECTION 4: CI/CD ── -->
-        <text x="190" y="280" font-size="9" fill="#93c5fd" class="L14">&gt; CI/CD: GitHub &#8594; Render  [&#10003; passing]</text>
-        <text x="190" y="294" font-size="9" fill="#93c5fd" class="L15">&gt; Build: clean | Prod: live | Git: no conflicts</text>
-        <text x="240" y="307" font-size="8" fill="#475569" font-style="italic" class="L16">*(merge conflicts resolved diplomatically)*</text>
+        <!-- ── MODULE TREE ── -->
+        <text x="190" y="166" font-size="10" fill="#93c5fd" class="L07">&gt; mounting modules&#8230;</text>
+        <text x="196" y="180" font-size="10" fill="#22d3ee" class="L08">  &#9500;&#9472;&#9472; [&#10003;] react.render &#9670; state: immutable</text>
+        <text x="196" y="194" font-size="10" fill="#22d3ee" class="L09">  &#9500;&#9472;&#9472; [&#10003;] api.gateway &nbsp;&#9670; latency: &#8804;12ms</text>
+        <text x="196" y="208" font-size="10" fill="#3d6b8f" class="L10">  &#9500;&#9472;&#9472; [&#8997;] db.optimizer &#9670; &#8592; handcrafted T-SQL</text>
+        <text x="196" y="222" font-size="10" fill="#22d3ee" class="L11">  &#9500;&#9472;&#9472; [&#10003;] pipeline.etl &#9670; cycles: automated</text>
+        <text x="196" y="236" font-size="10" fill="#3d6b8f" class="L12">  &#9492;&#9472;&#9472; [&#8734;] daemon.watch &#9670; &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; running</text>
+        <text x="209" y="249" font-size="9" fill="#334155" font-style="italic" class="L13">&nbsp;&nbsp;&#183;&#183;&#183; all modules nominal &#183;&#183;&#183;</text>
 
-        <!-- ── SECTION 5: VELOCITY ── -->
-        <text x="190" y="324" font-size="9" fill="#93c5fd" class="L17">&gt; Process velocity: +75% | Uptime: stable</text>
-        <text x="190" y="338" font-size="9" fill="#93c5fd" class="L18">&gt; MERN deployed, CORS config, rate-limited,</text>
-        <text x="190" y="352" font-size="9" fill="#93c5fd" class="L19">&gt;   documented, ships on schedule. always.</text>
-        <text x="238" y="365" font-size="8" fill="#475569" font-style="italic" class="L20">*(shipped before the retro. wild.)*</text>
 
-        <!-- ── SECTION 6: STATUS ── -->
-        <text x="190" y="382" font-size="9" fill="#93c5fd" class="L21">&gt; Available:  full-stack | new problems welcome</text>
-        <text x="190" y="396" font-size="9" fill="#93c5fd" class="L22">&gt; Specialty:  legacy rescue, scaling, the kind</text>
-        <text x="190" y="410" font-size="9" fill="#93c5fd" class="L23">&gt;   of dashboards execs actually read</text>
-        <text x="234" y="423" font-size="8" fill="#475569" font-style="italic" class="L24">*(they asked for pie charts anyway)*</text>
+        <!-- ── ARCANE READOUTS ── -->
+        <text x="190" y="266" font-size="10" fill="#93c5fd" class="L14">&gt; scanning dependency graph&#8230;</text>
+        <text x="196" y="280" font-size="10" fill="#93c5fd" class="L15">  &#9500;&#9472; node_modules &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; [174k pkgs]</text>
+        <text x="196" y="294" font-size="10" fill="#3d6b8f" class="L16">  &#9474; &nbsp;&#9492;&#9472; &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608; nobody knows why</text>
+        <text x="196" y="308" font-size="10" fill="#93c5fd" class="L17">  &#9492;&#9472; zero circular dependencies</text>
+        <text x="209" y="321" font-size="9" fill="#475569" class="L18">&nbsp;&nbsp;&#8627; *(technically impressive)*</text>
 
-        <!-- ── DIVIDER ── -->
-        <line x1="190" y1="436" x2="460" y2="436"
-          stroke="url(#gH)" stroke-width="0.55" class="Ldiv"/>
+
+        <!-- ── WARN / SYSTEM NOTES ── -->
+        <text x="190" y="338" font-size="10" fill="#93c5fd" class="L19">&gt; sys.check | Uptime: stable</text>
+        <text x="196" y="352" font-size="10" fill="#f59e0b" class="L20">  &#9888; WARN: caffeine.reserve below threshold</text>
+        <text x="209" y="365" font-size="9" fill="#475569" class="L21">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; *(non-critical. probably.)*</text>
+
+        <!-- ── SIGN-OFF ── -->
+        <text x="190" y="382" font-size="10" fill="#93c5fd" class="L22">&gt; &#9670; operator: david_r &#9670; clearance: full-stack</text>
+        <text x="209" y="396" font-size="9" fill="#475569" class="L23">&nbsp;&nbsp;*(ready for whatever you&#8217;re building)*</text>
+        <text x="209" y="410" font-size="9" fill="#334155" class="L24">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; awaiting instructions&#8230;</text>
 
         <!-- ── PROMPT ── -->
         <!-- Glow pass — no inline opacity attr, let animation control it -->
-        <text x="190" y="455" font-size="9" fill="#135ffb"
+        <text x="190" y="455" font-size="10" fill="#135ffb"
           filter="url(#promptGlow)" class="Lprompt">&gt; ready_to_deploy()</text>
         <!-- Crisp pass on top -->
-        <text x="190" y="455" font-size="9" fill="url(#gH)"
+        <text x="190" y="455" font-size="10" fill="url(#gH)"
           class="Lprompt">&gt; ready_to_deploy()</text>
 
         <!-- Blinking cursor — appears after prompt -->
