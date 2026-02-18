@@ -45,7 +45,7 @@
         </svg>
       <div class="flex gap-6 items-center">
         <a href="#experience" class="text-sm text-zinc-400 hover:text-white transition">Experience</a>
-        <a href="#project" class="text-sm text-zinc-400 hover:text-white transition">Projects</a>
+        <a href="#projects" class="text-sm text-zinc-400 hover:text-white transition">Projects</a>
         <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium rounded hover:opacity-90 transition">
           Contact
         </a>
@@ -700,12 +700,12 @@
     <div class="max-w-7xl mx-auto">
       <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Professional Experience</h2>
       <div class="space-y-12 max-w-3xl mx-auto">
-        <!-- OneKey MLS -->
+        <!-- Freelance -->
         <div class="flex flex-col md:flex-row gap-8">
           <div class="md:flex-1 flex-shrink-0 w-48 pt-1">
-            <div class="text-sm font-medium text-zinc-300">OneKey MLS</div>
-            <div class="text-xs text-zinc-500 mt-1">2022</div>
-            <div class="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mt-1">4 months</div>
+            <div class="text-sm font-medium text-zinc-300">Freelance</div>
+            <div class="text-xs text-zinc-500 mt-1">2022 - Present</div>
+            <div class="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mt-1" id="freelanceDuration"></div>
           </div>
           <div class="flex-[4] border-l border-zinc-800 pl-8 pb-8">
             <div class="relative">
@@ -740,7 +740,7 @@
           <div class="md:flex-1 flex-shrink-0 w-48 pt-1">
             <div class="text-sm font-medium text-zinc-300">FONAR Corporation</div>
             <div class="text-xs text-zinc-500 mt-1">2019 - 2022</div>
-            <div class="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mt-1">3.5 years</div>
+            <div class="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mt-1">3 years, 6 months</div>
           </div>
           <div class="flex-[4] border-l border-zinc-800 pl-8 pb-8">
             <div class="relative">
@@ -779,9 +779,9 @@
         <!-- Sikorsky -->
         <div class="flex flex-col md:flex-row gap-8">
           <div class="md:flex-1 flex-shrink-0 w-48 pt-1">
-            <div class="text-sm font-medium text-zinc-300">Sikorsky (Lockheed Martin)</div>
+            <div class="text-sm font-medium text-zinc-300">Sikorsky</div>
             <div class="text-xs text-zinc-500 mt-1">2018 - 2019</div>
-            <div class="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mt-1">1.5 years</div>
+            <div class="text-xs bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mt-1">1 year, 7 months</div>
           </div>
           <div class="flex-[4] border-l border-zinc-800 pl-8 pb-8">
             <div class="relative">
@@ -815,9 +815,9 @@
   </section>
 
   <!-- Featured Project -->
-  <section id="project" class="px-6 py-20 border-b border-zinc-800/50">
+  <section id="projects" class="px-6 py-20 border-b border-zinc-800/50">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Featured Project</h2>
+      <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Featured Work</h2>
       <div class="max-w-4xl mx-auto bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
         <!-- Project Header -->
         <div class="p-4 md:p-8 border-b border-zinc-800">
@@ -988,8 +988,7 @@
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Let's Build Something Together</h2>
       <p class="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
-        Looking for a full-stack developer who delivers results?<br> Let's talk about your next project.
-      </p>
+        Have a project in mind? Let's talk.</p>
       <div class="flex gap-4 w-fit mx-auto">
         <a 
           href="mailto:D-rz@live.com"
@@ -1045,6 +1044,19 @@
       document.getElementById('content-' + tabName).classList.remove('hidden');
       document.getElementById('tab-' + tabName).className = 'px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition';
     }
+
+    function getDuration(starYear, startMonth) {
+      const now = new Date();
+      const start = new Date(starYear, startMonth - 1);
+      const totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth() + 1);
+      const years = Math.floor(totalMonths / 12);
+      const months = totalMonths % 12;
+
+      if (months === 0) return `${years} years`;
+      return `${years} years, ${months} month${months > 1 ? "s" : ""}`;
+    }
+
+    document.getElementById("freelanceDuration").textContent = getDuration(2022, 8);
   </script>
 </body>
 </html>
