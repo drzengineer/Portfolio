@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>David Rodriguez - Full-Stack Developer Portfolio</title>
+  <title>David R | Full-Stack Developer</title>
+  <meta name="description" content="David R — Full-Stack Developer building software that cuts costs, automates workflows, and drives business decisions." />
+  <meta property="og:title" content="David R | Full-Stack Developer" />
+  <meta property="og:description" content="Full-Stack Developer building software that cuts costs, automates workflows, and drives business decisions." />
+  <meta property="og:url" content="https://davidr.io" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <!-- <link href="./output.css" rel="stylesheet"> -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
@@ -29,19 +36,15 @@
   <!-- Header -->
   <header class="border-b border-zinc-800/50 sticky top-0 bg-zinc-950/80 backdrop-blur-xl z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="36">
+      <svg aria-label="David R logo" role="img" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="36">
         <defs>
           <linearGradient id="logoGradFill" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="40%" style="stop-color:#135ffb"/>
             <stop offset="100%" style="stop-color:#22d3ee"/>
           </linearGradient>
-          <filter id="boltGlow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="2.5" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
         </defs>
-        <path fill="url(#logoGradFill)" class="s0" d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z"/>
-        <path fill="#22d3ee" class="s0" d="m56.43 66.08l-0.91 0.54c-4.71 2.89-9.98 4.64-15.43 5.26l6.93 6.85h22.08c0-0.01-12.67-12.65-12.67-12.65z"/>
+        <path fill="url(#logoGradFill)" d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z"/>
+        <path fill="#22d3ee" d="m56.43 66.08l-0.91 0.54c-4.71 2.89-9.98 4.64-15.43 5.26l6.93 6.85h22.08c0-0.01-12.67-12.65-12.67-12.65z"/>
         </svg>
       <div class="flex gap-4 sm:gap-6 items-center">
         <a href="#experience" class="text-sm font-medium text-zinc-400 hover:text-white transition">Experience</a>
@@ -399,7 +402,7 @@
   <!-- Impact Metrics -->
   <section class="px-6 py-20 border-b border-zinc-800/50 bg-zinc-900/15">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Measurable Impact</h2>
+      <h2 class="font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Measurable Impact</h2>
       <div class="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg">
           <div class="basis-3/4">
@@ -599,7 +602,7 @@
   <!-- Technical Skills -->
   <section class="px-6 py-20 border-b border-zinc-800/50">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Technical Skills</h2>
+      <h2 class="font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Technical Skills</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Frontend -->
         <div class="p-6 bg-gradient-to-br from-zinc-900 to-zinc-900/20 border border-zinc-800 rounded-lg hover:border-cyan-500/50 transition group">
@@ -648,7 +651,7 @@
             <span class="px-3 py-1.5 text-sm text-zinc-300 bg-zinc-800/50 rounded-lg border border-zinc-700/50">Express</span>
             <span class="px-3 py-1.5 text-sm text-zinc-300 bg-zinc-800/50 rounded-lg border border-zinc-700/50">Python</span>
             <span class="px-3 py-1.5 text-sm text-zinc-300 bg-zinc-800/50 rounded-lg border border-zinc-700/50">C# (.NET)</span>
-            <span class="px-3 py-1.5 text-sm text-sm text-zinc-300 bg-zinc-800/50 rounded-lg border border-zinc-700/50">RESTful APIs</span>
+            <span class="px-3 py-1.5 text-sm text-zinc-300 bg-zinc-800/50 rounded-lg border border-zinc-700/50">RESTful APIs</span>
           </div>
         </div>
 
@@ -708,7 +711,7 @@
   <!-- Experience Timeline -->
   <section id="experience" class="px-6 py-20 border-b border-zinc-800/50 bg-zinc-900/15">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Professional Experience</h2>
+      <h2 class="font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Professional Experience</h2>
       <div class="space-y-12 max-w-3xl mx-auto">
         <!-- Freelance -->
         <div class="flex flex-col md:flex-row gap-8">
@@ -721,16 +724,16 @@
             <div class="relative">
               <h3 class="text-lg font-semibold mb-4">Software Developer</h3>
               <ul class="space-y-3 mb-6">
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Reduced daily batch processing by 5 hours through T-SQL optimization</span>
                 </li>
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Automated realtor data lifecycle with Python & HubSpot API</span>
                 </li>
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Built real estate property update workflows with OData APIs</span>
                 </li>
               </ul>
@@ -756,20 +759,20 @@
             <div class="relative">
               <h3 class="text-lg font-semibold mb-4">Software Developer</h3>
               <ul class="space-y-3 mb-6">
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Led full-stack C# WPF application from conception to deployment</span>
                 </li>
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Architected production database schema and complex stored procedures</span>
                 </li>
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Engineered ETL pipeline saving 15 hours/week per employee</span>
                 </li>
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Achieved $80K annual savings and 80% reduction in insurance rejections</span>
                 </li>
               </ul>
@@ -797,16 +800,16 @@
             <div class="relative">
               <h3 class="text-lg font-semibold mb-4">Business Intelligence Developer</h3>
               <ul class="space-y-3 mb-6">
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Migrated legacy Hyperion infrastructure to Tableau & Power BI</span>
                 </li>
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Built automated dashboards for helicopter manufacturing workflow</span>
                 </li>
-                <li class="flex gap-3 text-zinc-400 items-start">
-                  <span class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 mt-1">▹</span>
+                <li class="flex gap-3 text-zinc-400">
+                  <span aria-hidden="true" class="bg-gradient-to-br from-blue-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0">▹</span>
                   <span>Enabled real-time decision-making vs. delayed manual reporting</span>
                 </li>
               </ul>
@@ -827,7 +830,7 @@
   <!-- Featured Project -->
   <section id="projects" class="px-6 py-20 border-b border-zinc-800/50">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-sm font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Featured Work</h2>
+      <h2 class="font-mono bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent inline-block bg-clip-text mb-12">// Featured Work</h2>
       <div class="max-w-4xl mx-auto bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
         <!-- Project Header -->
         <div class="p-4 md:p-8 border-b border-zinc-800">
@@ -866,25 +869,15 @@
         <!-- Project Tabs -->
         <div class="border-b border-zinc-800">
           <div class="flex w-fit mx-auto md:gap-4">
-            <button
-              onclick="showTab('architecture')"
-              id="tab-architecture"
-              class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition"
-            >
+            <button type="button" data-tab="architecture" class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition">
               System Architecture
             </button>
-            <button
-              onclick="showTab('features')"
-              id="tab-features"
-              class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition"
-            >
+
+            <button type="button" data-tab="features" class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition">
               Technical Features
             </button>
-            <button
-              onclick="showTab('stack')"
-              id="tab-stack"
-              class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition"
-            >
+
+            <button type="button" data-tab="stack" class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition">
               Technology Stack
             </button>
           </div>
@@ -893,7 +886,7 @@
         <!-- Project Content -->
         <div class="p-4 md:p-8">
           <!-- Architecture Tab -->
-          <div id="content-architecture" class="space-y-4">
+          <div data-panel="architecture" class="space-y-4">
             <div class="flex flex-col sm:flex-row gap-2 p-4 bg-zinc-950/50 rounded border border-zinc-800/50">
               <div class="flex-none w-28">
                 <span class="text-sm font-medium text-zinc-300">Frontend</span>
@@ -921,7 +914,7 @@
           </div>
 
           <!-- Features Tab -->
-          <div id="content-features" class="space-y-4 hidden">
+          <div data-panel="features" class="space-y-4 hidden">
             <div class="flex flex-col sm:flex-row gap-2 p-4 bg-zinc-950/50 rounded border border-zinc-800/50">
               <div class="flex-none w-28">
                 <span class="text-sm font-medium text-zinc-300">API Design</span>
@@ -949,7 +942,7 @@
           </div>
 
           <!-- Stack Tab -->
-          <div id="content-stack" class="space-y-4 hidden">
+          <div data-panel="stack" class="space-y-4 hidden">
             <div class="flex flex-col sm:flex-row gap-2 p-4 bg-zinc-950/50 rounded border border-zinc-800/50">
               <div class="flex-none w-28">
                 <span class="text-sm font-medium text-zinc-300">Frontend</span>
@@ -1002,7 +995,7 @@
       <div class="flex gap-4 w-fit mx-auto">
         <a 
           href="mailto:hi@davidr.io"
-          class="inline-flex items-center gap-2 px-4 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium rounded hover:opacity-90 transition text-sm md:text-base lg:text-lg animate-pulse"
+          class="inline-flex items-center gap-2 px-4 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium rounded hover:opacity-90 transition text-sm md:text-base lg:text-lg"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -1029,7 +1022,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="flex justify-between items-center text-xs md:text-sm text-zinc-500">
         <div class="font-mono">
-          © 2026 davidr
+          © 2026 David R
         </div>
         <div class="flex gap-6">
           <span>Full-Stack Developer</span>
@@ -1039,26 +1032,29 @@
   </footer>
 
   <script>
+    const activeClass = 'px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition';
+    const inactiveClass = 'px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition';
+
+    document.querySelectorAll('[data-tab]').forEach(button => {
+      button.addEventListener('click', () => showTab(button.dataset.tab));
+    });
+
     function showTab(tabName) {
-      // Hide all content
-      document.getElementById('content-architecture').classList.add('hidden');
-      document.getElementById('content-features').classList.add('hidden');
-      document.getElementById('content-stack').classList.add('hidden');
+      document.querySelectorAll('[data-tab]').forEach(btn => {
+        const isActive = btn.dataset.tab === tabName;
+        btn.className = isActive ? activeClass : inactiveClass;
+        btn.setAttribute('aria-selected', isActive);
+      });
 
-      // Reset all tabs
-      document.getElementById('tab-architecture').className = 'px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition';
-      document.getElementById('tab-features').className = 'px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition';
-      document.getElementById('tab-stack').className = 'px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 hover:text-zinc-300 transition';
-
-      // Show selected content and activate tab
-      document.getElementById('content-' + tabName).classList.remove('hidden');
-      document.getElementById('tab-' + tabName).className = 'px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition';
+      document.querySelectorAll('[data-panel]').forEach(panel => {
+        panel.classList.toggle('hidden', panel.dataset.panel !== tabName);
+      });
     }
 
-    function getDuration(starYear, startMonth) {
+    function getDuration(startYear, startMonth) {
       const now = new Date();
-      const start = new Date(starYear, startMonth - 1);
-      const totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth() + 1);
+      const start = new Date(startYear, startMonth - 1);
+      const totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
       const years = Math.floor(totalMonths / 12);
       const months = totalMonths % 12;
 
