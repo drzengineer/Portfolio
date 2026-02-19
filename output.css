@@ -556,6 +556,9 @@
       border-color: color-mix(in oklab, var(--color-zinc-800) 50%, transparent);
     }
   }
+  .bg-\[rgba\(24\,24\,27\,0\.15\)\] {
+    background-color: rgba(24,24,27,0.15);
+  }
   .bg-blue-600 {
     background-color: var(--color-blue-600);
   }

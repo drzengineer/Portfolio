@@ -1,7 +1,7 @@
 // ─── Tab Component ───────────────────────────────────────────────────────────
 
 const ACTIVE_TAB_CLASS =
-	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition";
+	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-linear-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition";
 const INACTIVE_TAB_CLASS =
 	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 transition";
 
