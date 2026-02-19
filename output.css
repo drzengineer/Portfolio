@@ -191,9 +191,6 @@
 	object {
 		display: block;
 	}
-	svg {
-		will-change: transform;
-	}
 	img,
 	video {
 		max-width: 100%;
