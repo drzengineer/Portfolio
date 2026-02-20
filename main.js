@@ -3,7 +3,7 @@
 const ACTIVE_TAB_CLASS =
 	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-linear-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition";
 const INACTIVE_TAB_CLASS =
-	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent text-zinc-400 transition";
+	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent bg-linear-to-r from-zinc-400 to-zinc-400 text-transparent bg-clip-text hover:from-zinc-300 hover:to-zinc-300 transition";
 
 const tablist = document.querySelector('[role="tablist"]');
 const tabs = [...tablist.querySelectorAll('[role="tab"]')];
