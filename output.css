@@ -912,6 +912,9 @@
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
   }
+  .\[--webkit-backdrop-filter\:blur\(24px\)\] {
+    --webkit-backdrop-filter: blur(24px);
+  }
   .group-hover\:border-\[\#06b6d480\] {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
