@@ -1,9 +1,14 @@
 // ─── Tab Component ───────────────────────────────────────────────────────────
 
-const ACTIVE_TAB_CLASS =
-	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 bg-linear-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text transition";
-const INACTIVE_TAB_CLASS =
-	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent bg-linear-to-r from-zinc-500 to-zinc-400 text-transparent bg-clip-text transition";
+const ACTIVE_BTN =
+	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 transition";
+const INACTIVE_BTN =
+	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent transition";
+
+const ACTIVE_SPAN =
+	"bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent";
+const INACTIVE_SPAN =
+	"bg-linear-to-r from-zinc-500 to-zinc-400 bg-clip-text text-transparent";
 
 const tablist = document.querySelector('[role="tablist"]');
 const tabs = [...tablist.querySelectorAll('[role="tab"]')];
@@ -14,16 +19,17 @@ const panels = tabs.map((tab) =>
 function activateTab(index) {
 	tabs.forEach((tab, i) => {
 		const isActive = i === index;
-		tab.className = isActive ? ACTIVE_TAB_CLASS : INACTIVE_TAB_CLASS;
+		tab.className = isActive ? ACTIVE_BTN : INACTIVE_BTN;
 		tab.setAttribute("aria-selected", String(isActive));
 		tab.tabIndex = isActive ? 0 : -1;
+
+		const span = tab.querySelector("span");
+		if (span) span.className = isActive ? ACTIVE_SPAN : INACTIVE_SPAN;
 	});
 	panels.forEach((panel, i) => {
-		if (i === index) {
-			panel.removeAttribute("hidden");
-		} else {
-			panel.setAttribute("hidden", "");
-		}
+		i === index
+			? panel.removeAttribute("hidden")
+			: panel.setAttribute("hidden", "");
 	});
 }
 
