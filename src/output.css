@@ -54,8 +54,6 @@
     --leading-tight: 1.25;
     --leading-relaxed: 1.625;
     --radius-lg: 0.5rem;
-    --ease-out: cubic-bezier(0, 0, 0.2, 1);
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --blur-xl: 24px;
     --blur-3xl: 64px;
@@ -214,14 +212,8 @@
   }
 }
 @layer utilities {
-  .\@container {
-    container-type: inline-size;
-  }
   .pointer-events-none {
     pointer-events: none;
-  }
-  .invisible {
-    visibility: hidden;
   }
   .sr-only {
     position: absolute;
@@ -255,20 +247,11 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .right-1 {
-    right: calc(var(--spacing) * 1);
-  }
   .right-1\/4 {
     right: calc(1 / 4 * 100%);
   }
-  .bottom-1 {
-    bottom: calc(var(--spacing) * 1);
-  }
   .bottom-1\/4 {
     bottom: calc(1 / 4 * 100%);
-  }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
   }
   .left-1\/4 {
     left: calc(1 / 4 * 100%);
@@ -312,9 +295,6 @@
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
-  .block {
-    display: block;
-  }
   .flex {
     display: flex;
   }
@@ -333,9 +313,6 @@
   .inline-flex {
     display: inline-flex;
   }
-  .table {
-    display: table;
-  }
   .h-2 {
     height: calc(var(--spacing) * 2);
   }
@@ -353,27 +330,6 @@
   }
   .h-full {
     height: 100%;
-  }
-  .max-h-30 {
-    max-height: calc(var(--spacing) * 30);
-  }
-  .max-h-70 {
-    max-height: calc(var(--spacing) * 70);
-  }
-  .max-h-100 {
-    max-height: calc(var(--spacing) * 100);
-  }
-  .max-h-400 {
-    max-height: calc(var(--spacing) * 400);
-  }
-  .max-h-440 {
-    max-height: calc(var(--spacing) * 440);
-  }
-  .max-h-\[400\] {
-    max-height: 400;
-  }
-  .max-h-\[400px\] {
-    max-height: 400px;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -396,44 +352,8 @@
   .w-96 {
     width: calc(var(--spacing) * 96);
   }
-  .w-\[clamp\(16px\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    width: clamp(16px, 0.967vw + 8.57px, 22.5px);
-  }
-  .w-\[clamp\(150px\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    width: clamp(150px, 0.967vw + 8.57px, 22.5px);
-  }
-  .w-\[clamp\(150pxpx\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    width: clamp(150pxpx, 0.967vw + 8.57px, 22.5px);
-  }
-  .w-\[clamp\(170px\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    width: clamp(170px, 0.967vw + 8.57px, 22.5px);
-  }
-  .w-\[clamp\(180px\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    width: clamp(180px, 0.967vw + 8.57px, 22.5px);
-  }
-  .w-\[clamp\(190px\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    width: clamp(190px, 0.967vw + 8.57px, 22.5px);
-  }
   .w-\[clamp\(190px\,22\.32vw\+18\.58px\,340px\)\] {
     width: clamp(190px, 22.32vw + 18.58px, 340px);
-  }
-  .w-\[clamp\(190px\,23\.81vw\+7\.14px\,350px\)\] {
-    width: clamp(190px, 23.81vw + 7.14px, 350px);
-  }
-  .w-\[clamp\(190px\,100vw\,22\.5px\)\] {
-    width: clamp(190px, 100vw, 22.5px);
-  }
-  .w-\[clamp\(190px\,100vw\,340px\)\] {
-    width: clamp(190px, 100vw, 340px);
-  }
-  .w-\[clamp\(190px\,100vw\,350px\)\] {
-    width: clamp(190px, 100vw, 350px);
-  }
-  .w-\[clamp\(190px\,100vw\,400px\)\] {
-    width: clamp(190px, 100vw, 400px);
-  }
-  .w-\[clamp\(200pxpx\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    width: clamp(200pxpx, 0.967vw + 8.57px, 22.5px);
   }
   .w-fit {
     width: fit-content;
@@ -453,59 +373,20 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
-  .max-w-162 {
-    max-width: calc(var(--spacing) * 162);
-  }
-  .max-w-162\.5 {
-    max-width: calc(var(--spacing) * 162.5);
-  }
-  .max-w-170 {
-    max-width: calc(var(--spacing) * 170);
-  }
-  .max-w-175 {
-    max-width: calc(var(--spacing) * 175);
-  }
   .max-w-300 {
     max-width: calc(var(--spacing) * 300);
-  }
-  .max-w-\[100px\] {
-    max-width: 100px;
-  }
-  .max-w-\[700px\] {
-    max-width: 700px;
   }
   .max-w-md {
     max-width: var(--container-md);
   }
-  .min-w-0 {
-    min-width: calc(var(--spacing) * 0);
-  }
   .flex-1 {
     flex: 1;
-  }
-  .flex-2 {
-    flex: 2;
-  }
-  .flex-3 {
-    flex: 3;
-  }
-  .flex-4 {
-    flex: 4;
   }
   .flex-5 {
     flex: 5;
   }
-  .flex-6 {
-    flex: 6;
-  }
   .flex-7 {
     flex: 7;
-  }
-  .flex-8 {
-    flex: 8;
-  }
-  .flex-9 {
-    flex: 9;
   }
   .flex-15 {
     flex: 15;
@@ -513,80 +394,20 @@
   .flex-none {
     flex: none;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
-  .shrink {
-    flex-shrink: 1;
-  }
   .shrink-0 {
     flex-shrink: 0;
-  }
-  .shrink-1 {
-    flex-shrink: 1;
-  }
-  .shrink-2 {
-    flex-shrink: 2;
-  }
-  .shrink-3 {
-    flex-shrink: 3;
-  }
-  .shrink-5 {
-    flex-shrink: 5;
-  }
-  .shrink-10 {
-    flex-shrink: 10;
-  }
-  .shrink-30 {
-    flex-shrink: 30;
-  }
-  .shrink-100 {
-    flex-shrink: 100;
-  }
-  .shrink-1000 {
-    flex-shrink: 1000;
-  }
-  .shrink-\[2\] {
-    flex-shrink: 2;
-  }
-  .shrink-\[3\] {
-    flex-shrink: 3;
-  }
-  .shrink-\[7\] {
-    flex-shrink: 7;
-  }
-  .basis-1 {
-    flex-basis: calc(var(--spacing) * 1);
   }
   .basis-1\/4 {
     flex-basis: calc(1 / 4 * 100%);
   }
-  .basis-3 {
-    flex-basis: calc(var(--spacing) * 3);
-  }
   .basis-3\/4 {
     flex-basis: calc(3 / 4 * 100%);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .origin-left {
-    transform-origin: 0;
-  }
-  .scale-75 {
-    --tw-scale-x: 75%;
-    --tw-scale-y: 75%;
-    --tw-scale-z: 75%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .animate-pulse {
     animation: var(--animate-pulse);
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -690,9 +511,6 @@
   .border-cyan-500 {
     border-color: var(--color-cyan-500);
   }
-  .border-green-500 {
-    border-color: var(--color-green-500);
-  }
   .border-green-500\/20 {
     border-color: color-mix(in srgb, oklch(72.3% 0.219 149.579) 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -720,17 +538,11 @@
       border-color: color-mix(in oklab, var(--color-zinc-800) 50%, transparent);
     }
   }
-  .bg-blue-600 {
-    background-color: var(--color-blue-600);
-  }
   .bg-blue-600\/10 {
     background-color: color-mix(in srgb, oklch(54.6% 0.245 262.881) 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-blue-600) 10%, transparent);
     }
-  }
-  .bg-blue-800 {
-    background-color: var(--color-blue-800);
   }
   .bg-blue-800\/10 {
     background-color: color-mix(in srgb, oklch(42.4% 0.199 265.638) 10%, transparent);
@@ -747,17 +559,11 @@
       background-color: color-mix(in oklab, var(--color-green-500) 10%, transparent);
     }
   }
-  .bg-zinc-500 {
-    background-color: var(--color-zinc-500);
-  }
   .bg-zinc-500\/10 {
     background-color: color-mix(in srgb, oklch(55.2% 0.016 285.938) 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-zinc-500) 10%, transparent);
     }
-  }
-  .bg-zinc-800 {
-    background-color: var(--color-zinc-800);
   }
   .bg-zinc-800\/50 {
     background-color: color-mix(in srgb, oklch(27.4% 0.006 286.033) 50%, transparent);
@@ -840,10 +646,6 @@
     --tw-gradient-to: var(--color-zinc-400);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
-  .to-zinc-900 {
-    --tw-gradient-to: var(--color-zinc-900);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
   .to-zinc-900\/20 {
     --tw-gradient-to: color-mix(in srgb, oklch(21% 0.006 285.885) 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -902,9 +704,6 @@
   .pb-10 {
     padding-bottom: calc(var(--spacing) * 10);
   }
-  .pb-20 {
-    padding-bottom: calc(var(--spacing) * 20);
-  }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
   }
@@ -948,314 +747,11 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
-  .text-\[2\.5rem\] {
-    font-size: 2.5rem;
-  }
-  .text-\[16px\] {
-    font-size: 16px;
-  }
-  .text-\[clamp\(0px\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    font-size: clamp(0px, 0.967vw + 8.57px, 22.5px);
-  }
-  .text-\[clamp\(0px\,1\.63vw\,22\.5px\)\] {
-    font-size: clamp(0px, 1.63vw, 22.5px);
-  }
-  .text-\[clamp\(1\.1rem\,2vw\,4\.5rem\)\] {
-    font-size: clamp(1.1rem, 2vw, 4.5rem);
-  }
-  .text-\[clamp\(1\.2rem\,2vw\,4\.5rem\)\] {
-    font-size: clamp(1.2rem, 2vw, 4.5rem);
-  }
-  .text-\[clamp\(1\.5rem\,1vw\,4\.5rem\)\] {
-    font-size: clamp(1.5rem, 1vw, 4.5rem);
-  }
-  .text-\[clamp\(1\.5rem\,2vw\,4\.5rem\)\] {
-    font-size: clamp(1.5rem, 2vw, 4.5rem);
-  }
-  .text-\[clamp\(1\.5rem\,4vw\,4\.5rem\)\] {
-    font-size: clamp(1.5rem, 4vw, 4.5rem);
-  }
-  .text-\[clamp\(1\.5rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(1.5rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(1\.5rem\,40px\,4\.5rem\)\] {
-    font-size: clamp(1.5rem, 40px, 4.5rem);
-  }
-  .text-\[clamp\(1\.rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(1.rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,2rem\)\] {
-    font-size: clamp(1rem, 1.4vw, 2rem);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,20px\)\] {
-    font-size: clamp(1rem, 1.4vw, 20px);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.4vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,22px\)\] {
-    font-size: clamp(1rem, 1.4vw, 22px);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,23px\)\] {
-    font-size: clamp(1rem, 1.4vw, 23px);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,25px\)\] {
-    font-size: clamp(1rem, 1.4vw, 25px);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,30px\)\] {
-    font-size: clamp(1rem, 1.4vw, 30px);
-  }
-  .text-\[clamp\(1rem\,1\.4vw\,320px\)\] {
-    font-size: clamp(1rem, 1.4vw, 320px);
-  }
-  .text-\[clamp\(1rem\,1\.6vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.6vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.7vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.7vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.63vw\,1\.2rem\)\] {
-    font-size: clamp(1rem, 1.63vw, 1.2rem);
-  }
-  .text-\[clamp\(1rem\,1\.63vw\,1\.3rem\)\] {
-    font-size: clamp(1rem, 1.63vw, 1.3rem);
-  }
-  .text-\[clamp\(1rem\,1\.63vw\,1\.4rem\)\] {
-    font-size: clamp(1rem, 1.63vw, 1.4rem);
-  }
-  .text-\[clamp\(1rem\,1\.63vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.63vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.64vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.64vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.65cqw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.65cqw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.65vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.65vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.67vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.67vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.635vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.635vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.639vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.639vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.645vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.645vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1\.647vw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1.647vw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,1cqw\,22\.5px\)\] {
-    font-size: clamp(1rem, 1cqw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,2vw\,2rem\)\] {
-    font-size: clamp(1rem, 2vw, 2rem);
-  }
-  .text-\[clamp\(1rem\,2vw\,4\.4rem\)\] {
-    font-size: clamp(1rem, 2vw, 4.4rem);
-  }
-  .text-\[clamp\(1rem\,2vw\,4\.5rem\)\] {
-    font-size: clamp(1rem, 2vw, 4.5rem);
-  }
-  .text-\[clamp\(1rem\,2vw\,4rem\)\] {
-    font-size: clamp(1rem, 2vw, 4rem);
-  }
-  .text-\[clamp\(1rem\,5cqw\,22\.5px\)\] {
-    font-size: clamp(1rem, 5cqw, 22.5px);
-  }
-  .text-\[clamp\(1rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(1rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(1rem\,16px\,22\.5px\)\] {
-    font-size: clamp(1rem, 16px, 22.5px);
-  }
-  .text-\[clamp\(1rem\,20vw\,2rem\)\] {
-    font-size: clamp(1rem, 20vw, 2rem);
-  }
-  .text-\[clamp\(1rem\,22\.5px\,22\.5px\)\] {
-    font-size: clamp(1rem, 22.5px, 22.5px);
-  }
-  .text-\[clamp\(2\.0rem\,1vw\,4\.5rem\)\] {
-    font-size: clamp(2.0rem, 1vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.0rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.0rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.1rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.1rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.2rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.3rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.3rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.4rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
-  }
   .text-\[clamp\(2\.5rem\,4\.76vw\+3\.42px\,4\.5rem\)\] {
     font-size: clamp(2.5rem, 4.76vw + 3.42px, 4.5rem);
   }
-  .text-\[clamp\(2\.5rem\,4\.76vw\+3\.43px\,4\.5rem\)\] {
-    font-size: clamp(2.5rem, 4.76vw + 3.43px, 4.5rem);
-  }
-  .text-\[clamp\(2\.5rem\,4\.76vw\,4\.5rem\)\] {
-    font-size: clamp(2.5rem, 4.76vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.5rem\,5vw\,4\.5rem\)\] {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.5rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.15rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.15rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.19rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.19rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2\.21rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2.21rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(2rem\,2vw\,4\.5rem\)\] {
-    font-size: clamp(2rem, 2vw, 4.5rem);
-  }
-  .text-\[clamp\(2rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(2rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(3rem\,6vw\,4\.5rem\)\] {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-  }
-  .text-\[clamp\(7px\,2px\,22\.5px\)\] {
-    font-size: clamp(7px, 2px, 22.5px);
-  }
-  .text-\[clamp\(7pxpx\,2px\,22\.5px\)\] {
-    font-size: clamp(7pxpx, 2px, 22.5px);
-  }
-  .text-\[clamp\(9px\,1\.63vw\,22\.5px\)\] {
-    font-size: clamp(9px, 1.63vw, 22.5px);
-  }
-  .text-\[clamp\(10px\,2px\,22\.5px\)\] {
-    font-size: clamp(10px, 2px, 22.5px);
-  }
-  .text-\[clamp\(12\.1px\,1\.23vw\+2\.15px\,22\.5px\)\] {
-    font-size: clamp(12.1px, 1.23vw + 2.15px, 22.5px);
-  }
-  .text-\[clamp\(12\.5px\,1\.23vw\+2\.15px\,22\.5px\)\] {
-    font-size: clamp(12.5px, 1.23vw + 2.15px, 22.5px);
-  }
-  .text-\[clamp\(12\.5px\,1\.413vw\+2\.15px\,22\.5px\)\] {
-    font-size: clamp(12.5px, 1.413vw + 2.15px, 22.5px);
-  }
-  .text-\[clamp\(12\.5px\,2px\,22\.5px\)\] {
-    font-size: clamp(12.5px, 2px, 22.5px);
-  }
-  .text-\[clamp\(12px\,0\.967vw\+8\.57px\,22\.5px\)\] {
-    font-size: clamp(12px, 0.967vw + 8.57px, 22.5px);
-  }
-  .text-\[clamp\(12px\,0px\,22\.5px\)\] {
-    font-size: clamp(12px, 0px, 22.5px);
-  }
-  .text-\[clamp\(12px\,1\.23vw\+2\.15px\,22\.5px\)\] {
-    font-size: clamp(12px, 1.23vw + 2.15px, 22.5px);
-  }
-  .text-\[clamp\(12px\,1\.63vw\,22\.5px\)\] {
-    font-size: clamp(12px, 1.63vw, 22.5px);
-  }
-  .text-\[clamp\(12px\,1\.563vw\,22\.5px\)\] {
-    font-size: clamp(12px, 1.563vw, 22.5px);
-  }
-  .text-\[clamp\(12px\,2px\,22\.5px\)\] {
-    font-size: clamp(12px, 2px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.2px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.2px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.3px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.3px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.4px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.4px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.5px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.5px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.6px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.6px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.15px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.15px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.17px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.17px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.45px\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.45px, 22.5px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.45px\,22\.6px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.45px, 22.6px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\+2\.45px\,22\.55px\)\] {
-    font-size: clamp(13px, 1.413vw + 2.45px, 22.55px);
-  }
-  .text-\[clamp\(13px\,1\.413vw\,22\.5px\)\] {
-    font-size: clamp(13px, 1.413vw, 22.5px);
-  }
-  .text-\[clamp\(13px\,2px\,22\.5px\)\] {
-    font-size: clamp(13px, 2px, 22.5px);
-  }
   .text-\[clamp\(16px\,0\.967vw\+8\.57px\,22\.5px\)\] {
     font-size: clamp(16px, 0.967vw + 8.57px, 22.5px);
-  }
-  .text-\[clamp\(16px\,0\.967vw\,22\.5px\)\] {
-    font-size: clamp(16px, 0.967vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,1\.1vs\,22\.5px\)\] {
-    font-size: clamp(16px, 1.1vs, 22.5px);
-  }
-  .text-\[clamp\(16px\,1\.1vw\,22\.5px\)\] {
-    font-size: clamp(16px, 1.1vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,1\.2vw\,22\.5px\)\] {
-    font-size: clamp(16px, 1.2vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,1\.5vw\,22\.5px\)\] {
-    font-size: clamp(16px, 1.5vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,1\.563vw\,22\.5px\)\] {
-    font-size: clamp(16px, 1.563vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,1vw\,22\.5px\)\] {
-    font-size: clamp(16px, 1vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,2\.2vw\,22\.5px\)\] {
-    font-size: clamp(16px, 2.2vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,2\.3vw\,22\.5px\)\] {
-    font-size: clamp(16px, 2.3vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,2\.4vw\,22\.5px\)\] {
-    font-size: clamp(16px, 2.4vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,2\.5vw\,22\.5px\)\] {
-    font-size: clamp(16px, 2.5vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,2vw\,22\.5px\)\] {
-    font-size: clamp(16px, 2vw, 22.5px);
-  }
-  .text-\[clamp\(16px\,3vw\,22\.5px\)\] {
-    font-size: clamp(16px, 3vw, 22.5px);
-  }
-  .text-\[clamp\(17px\,1\.4vw\,22\.5px\)\] {
-    font-size: clamp(17px, 1.4vw, 22.5px);
-  }
-  .text-\[clamp\(17px\,1vw\,22\.5px\)\] {
-    font-size: clamp(17px, 1vw, 22.5px);
   }
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
@@ -1308,16 +804,9 @@
   .uppercase {
     text-transform: uppercase;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .ring {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -1332,10 +821,6 @@
   }
   .backdrop-blur-xl {
     --tw-backdrop-blur: blur(var(--blur-xl));
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .backdrop-filter {
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
@@ -1486,21 +971,10 @@
       padding-left: calc(var(--spacing) * 8);
     }
   }
-  .sm\:text-lg {
-    @media (width >= 40rem) {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
-    }
-  }
   .sm\:text-sm {
     @media (width >= 40rem) {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-  .sm\:text-\[3\.3rem\] {
-    @media (width >= 40rem) {
-      font-size: 3.3rem;
     }
   }
   .md\:mx-0 {
@@ -1531,14 +1005,6 @@
   .md\:flex-4 {
     @media (width >= 48rem) {
       flex: 4;
-    }
-  }
-  .md\:scale-90 {
-    @media (width >= 48rem) {
-      --tw-scale-x: 90%;
-      --tw-scale-y: 90%;
-      --tw-scale-z: 90%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
     }
   }
   .md\:grid-cols-2 {
@@ -1619,11 +1085,6 @@
       line-height: var(--tw-leading, var(--text-xs--line-height));
     }
   }
-  .md\:text-\[clamp\(1rem\,5cqw\,22\.5px\)\] {
-    @media (width >= 48rem) {
-      font-size: clamp(1rem, 5cqw, 22.5px);
-    }
-  }
   .md\:tracking-normal {
     @media (width >= 48rem) {
       --tw-tracking: var(--tracking-normal);
@@ -1641,14 +1102,6 @@
       margin-bottom: calc(var(--spacing) * 6);
     }
   }
-  .lg\:scale-100 {
-    @media (width >= 64rem) {
-      --tw-scale-x: 100%;
-      --tw-scale-y: 100%;
-      --tw-scale-z: 100%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
   .lg\:grid-cols-4 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1659,22 +1112,10 @@
       padding-right: calc(var(--spacing) * 2);
     }
   }
-  .lg\:text-7xl {
-    @media (width >= 64rem) {
-      font-size: var(--text-7xl);
-      line-height: var(--tw-leading, var(--text-7xl--line-height));
-    }
-  }
   .lg\:text-lg {
     @media (width >= 64rem) {
       font-size: var(--text-lg);
       line-height: var(--tw-leading, var(--text-lg--line-height));
-    }
-  }
-  .lg\:text-xl {
-    @media (width >= 64rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .lg\:tracking-wide {
@@ -1683,21 +1124,6 @@
       letter-spacing: var(--tracking-wide);
     }
   }
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -1848,11 +1274,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -1950,9 +1371,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -1986,7 +1404,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;

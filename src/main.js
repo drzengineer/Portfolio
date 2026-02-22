@@ -1,3 +1,11 @@
+document.documentElement.style.setProperty("scroll-behavior", "auto");
+
+window.addEventListener("load", () => {
+	setTimeout(() => {
+		document.documentElement.style.removeProperty("scroll-behavior");
+	}, 100);
+});
+
 // ─── Tab Component ───────────────────────────────────────────────────────────
 
 const ACTIVE_BTN =
