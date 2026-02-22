@@ -46,6 +46,37 @@
        style="position:absolute;width:0;height:0;overflow:hidden">
     <defs>
 
+      <!-- ══ GRID translucent Mask ════════════════════════════════ -->
+
+        <radialGradient id="gridFadeRad" cx="75%" cy="50%" r="25%">
+          <stop offset="0%"   stop-color="white" stop-opacity="1"/>
+          <stop offset="60%"  stop-color="white" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="gridMask">
+          <rect width="1200" height="630" fill="url(#gridFadeRad)"/>
+        </mask>
+        <filter id="bgBloom" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="72"/>
+        </filter>
+
+        <!-- ══ LOGO GRADIENTS & FILTERS ═══════════════════════════ -->
+
+        <linearGradient id="topLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="40%" stop-color="#135ffb66"/>
+          <stop offset="100%" stop-color="#22d3dd"/>
+        </linearGradient>
+        <linearGradient id="botLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="40%" stop-color="#22d3eedd"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
+        <filter id="logoBloom" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="55"/>
+        </filter>
+        <filter id="logoBlur" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation=".8"/>
+        </filter>
+
       <!-- ══ BRAND GRADIENTS ══════════════════════════════════════ -->
 
       <!-- Vertical   blue → cyan  (braces, bolt, hourglass, coin) -->
@@ -201,19 +232,7 @@
     <!-- Grid + bloom background -->
     <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <radialGradient id="gridFadeRad" cx="75%" cy="50%" r="25%">
-          <stop offset="0%"   stop-color="white" stop-opacity="1"/>
-          <stop offset="60%"  stop-color="white" stop-opacity="0.3"/>
-          <stop offset="100%" stop-color="white" stop-opacity="0"/>
-        </radialGradient>
-        <mask id="gridMask">
-          <rect width="1200" height="630" fill="url(#gridFadeRad)"/>
-        </mask>
-        <filter id="bgBloom" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation="72"/>
-        </filter>
-      </defs>
+      
 
       <!-- Ambient bloom -->
       <ellipse cx="900" cy="315" rx="320" ry="280"
@@ -301,22 +320,6 @@
       <!-- Logo -->
       <div class="hidden md:flex flex-5 items-center justify-end">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" class="w-[clamp(190px,22.32vw+18.58px,340px)] pb-10" aria-hidden="true">
-          <defs>
-            <linearGradient id="topLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="40%" stop-color="#135ffb66"/>
-              <stop offset="100%" stop-color="#22d3dd"/>
-            </linearGradient>
-            <linearGradient id="botLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="40%" stop-color="#22d3eedd"/>
-              <stop offset="100%" stop-color="#22d3ee"/>
-            </linearGradient>
-            <filter id="logoBloom" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation="55"/>
-            </filter>
-            <filter id="logoBlur" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation=".8"/>
-            </filter>
-          </defs>
 
           <!-- Glow fill bloom -->
           <g transform="translate(16,16) scale(5.6)" filter="url(#logoBlur)"  opacity=".5">
