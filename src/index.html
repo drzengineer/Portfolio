@@ -18,134 +18,12 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link href="./output.css" rel="stylesheet">
   <style>
-    /* ─── Tailwind pulse (used by the "Available for hire" dot) ─── */
+    /* ─── pulse (used by the "Available for hire" dot) ─── */
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50%       { opacity: 0.5; }
     }
     .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-
-    /* ─── Hero terminal animations ─── */
-
-    /* Font stack for all terminal text */
-    .mono { font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; }
-
-    /*
-      Boot flicker-in: each line starts at opacity 0, CRT-flickers,
-      then holds its resting opacity.
-      animation-fill-mode: both = starts at 0, stays at end state.
-    */
-    @keyframes flickerOutput {
-      0%   { opacity: 0    }
-      8%   { opacity: 0.7  }
-      14%  { opacity: 0.1  }
-      22%  { opacity: 0.8  }
-      30%  { opacity: 0.4  }
-      42%  { opacity: 0.82 }
-      100% { opacity: 0.82 }
-    }
-    @keyframes flickerAside {
-      0%   { opacity: 0    }
-      10%  { opacity: 0.4  }
-      18%  { opacity: 0.05 }
-      32%  { opacity: 0.48 }
-      100% { opacity: 0.48 }
-    }
-    @keyframes flickerCyan {
-      0%   { opacity: 0    }
-      7%   { opacity: 0.8  }
-      13%  { opacity: 0.15 }
-      24%  { opacity: 0.90 }
-      100% { opacity: 0.90 }
-    }
-    @keyframes flickerPrompt {
-      0%   { opacity: 0    }
-      6%   { opacity: 0.85 }
-      13%  { opacity: 0.2  }
-      22%  { opacity: 1.0  }
-      100% { opacity: 1.0  }
-    }
-
-    /* Brace slow breath */
-    @keyframes braceBreath  { 0%,100%{ opacity: .90 } 50%{ opacity: .55 } }
-    @keyframes braceGBreath { 0%,100%{ opacity: .42 } 50%{ opacity: .16 } }
-
-    /* Ambient bloom pulse */
-    @keyframes ambPulse { 0%,100%{ opacity: .07 } 50%{ opacity: .14 } }
-
-    /* Cursor blink — starts after all lines are in */
-    @keyframes blink { 0%,48%{ opacity: 1 } 49%,100%{ opacity: 0 } }
-
-    .bC   { animation: braceBreath  5.5s ease-in-out infinite; }
-    .bG   { animation: braceGBreath 5.5s ease-in-out infinite; }
-    .ambE { animation: ambPulse     5.0s ease-in-out infinite; }
-
-    /* Line-by-line boot delays */
-    .L01 { animation: flickerOutput 0.55s ease-out  0.10s both; }
-    .L02 { animation: flickerOutput 0.55s ease-out  0.30s both; }
-    .L03 { animation: flickerOutput 0.55s ease-out  0.50s both; }
-    .L04 { animation: flickerOutput 0.55s ease-out  0.68s both; }
-    .L05 { animation: flickerAside  0.55s ease-out  0.90s both; }
-    .L07 { animation: flickerOutput 0.55s ease-out  1.10s both; }
-    .L08 { animation: flickerCyan   0.55s ease-out  1.30s both; }
-    .L09 { animation: flickerCyan   0.55s ease-out  1.48s both; }
-    .L10 { animation: flickerCyan   0.55s ease-out  1.70s both; }
-    .L11 { animation: flickerCyan   0.55s ease-out  1.90s both; }
-    .L12 { animation: flickerCyan   0.55s ease-out  2.10s both; }
-    .L13 { animation: flickerAside  0.55s ease-out  2.30s both; }
-    .L14 { animation: flickerOutput 0.55s ease-out  2.70s both; }
-    .L15 { animation: flickerOutput 0.55s ease-out  2.90s both; }
-    .L16 { animation: flickerAside  0.55s ease-out  3.08s both; }
-    .L17 { animation: flickerOutput 0.55s ease-out  3.30s both; }
-    .L18 { animation: flickerOutput 0.55s ease-out  3.50s both; }
-    .L19 { animation: flickerOutput 0.55s ease-out  3.70s both; }
-    .L20 { animation: flickerAside  0.55s ease-out  3.88s both; }
-    .L21 { animation: flickerOutput 0.55s ease-out  4.10s both; }
-    .L22 { animation: flickerOutput 0.55s ease-out  4.30s both; }
-    .L23 { animation: flickerAside  0.55s ease-out  4.50s both; }
-    .L24 { animation: flickerAside  0.55s ease-out  4.68s both; }
-    .Ldiv    { animation: flickerAside  0.40s ease-out  4.90s both; }
-    .Lprompt { animation: flickerPrompt 0.70s ease-out  5.10s both; }
-
-    /* Cursor invisible until after prompt finishes (~5.8 s) */
-    .cursor {
-      opacity: 0;
-      animation: blink 1.05s step-end 5.80s infinite;
-    }
-
-    /* animation removed for indivduals that prefer none */
-    @media (prefers-reduced-motion: reduce) {
-      .L01, .L03, .L04, .L07, .L08,
-      .L09, .L10, .L11, .L14, .L15,
-      .L17, .L18, .L19, .L21, .L22 {
-        animation: none;
-        opacity: 0.82;
-      }
-
-      .L02, .L12, .L13, .L16, .L20,
-      .L23, .L24, .Ldiv {
-        animation: none;
-        opacity: 0.48;
-      }
-
-      .L05 {
-        animation: none;
-        opacity: 0.48;
-      }
-
-      .Lprompt {
-        animation: none;
-        opacity: 1;
-      }
-
-      .bC  { animation: none; opacity: 0.90; }
-      .bG  { animation: none; opacity: 0.42; }
-      .ambE { animation: none; opacity: 0.07; }
-
-      .animate-pulse {
-        animation: none;
-      }
-    }
   </style>
   <script defer src="./main.js"></script>
 </head>
@@ -186,25 +64,6 @@
       <linearGradient id="logoGradFill" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="40%"  stop-color="#135ffb"/>
         <stop offset="100%" stop-color="#22d3ee"/>
-      </linearGradient>
-
-      <!-- ══ HERO TERMINAL ════════════════════════════════════════ -->
-
-      <!-- Glass panel — fades to transparent on both sides -->
-      <linearGradient id="glassFade" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%"   stop-color="#0a1628" stop-opacity="0"/>
-        <stop offset="10%"  stop-color="#0a1628" stop-opacity="0.26"/>
-        <stop offset="50%"  stop-color="#0a1628" stop-opacity="0.30"/>
-        <stop offset="90%"  stop-color="#0a1628" stop-opacity="0.26"/>
-        <stop offset="100%" stop-color="#0a1628" stop-opacity="0"/>
-      </linearGradient>
-
-      <!-- Hairline borders — fade to nothing at both edges -->
-      <linearGradient id="borderFade" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%"   stop-color="#135ffb" stop-opacity="0"/>
-        <stop offset="12%"  stop-color="#135ffb" stop-opacity="0.28"/>
-        <stop offset="88%"  stop-color="#22d3ee" stop-opacity="0.28"/>
-        <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
       </linearGradient>
 
       <!-- ══ METRIC CARD GRADIENTS ════════════════════════════════ -->
@@ -249,23 +108,6 @@
 
       <!-- ══ FILTERS ════════════════════════════════════════════== -->
 
-      <!-- Brace edge glow -->
-      <filter id="bGlow" x="-50%" y="-4%" width="200%" height="108%">
-        <feGaussianBlur stdDeviation="5" result="blur"/>
-        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-
-      <!-- Prompt line glow -->
-      <filter id="promptGlow" x="-8%" y="-80%" width="116%" height="260%">
-        <feGaussianBlur stdDeviation="3" result="blur"/>
-        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-
-      <!-- Ambient bloom behind braces -->
-      <filter id="amb" x="-50%" y="-30%" width="200%" height="160%">
-        <feGaussianBlur stdDeviation="30"/>
-      </filter>
-
       <!-- Coin ring glow -->
       <filter id="coinGlow" x="-35%" y="-35%" width="170%" height="170%">
         <feGaussianBlur stdDeviation="4" result="b"/>
@@ -303,13 +145,6 @@
         <feGaussianBlur stdDeviation="1.8" result="b"/>
         <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
       </filter>
-
-      <!-- ══ CLIP PATHS ════════════════════════════════════════════ -->
-
-      <!-- Hero terminal panel -->
-      <clipPath id="panelClip">
-        <rect x="150" y="72" width="350" height="414"/>
-      </clipPath>
 
       <!-- ══ ICON SYMBOLS ══════════════════════════════════════════
            Define once; render anywhere with <use href="#icon-*"/>.
@@ -361,25 +196,89 @@
   </header>
 
   <!-- Hero -->
-  <section id="main-content" class="px-6 py-10 md:px-16 border-b border-zinc-800/50">
-    <div class="max-w-300 mx-auto flex flex-col md:flex-row justify-between items-center">
-      <div class="max-w-4xl flex-7 md:pb-8">
+  <section id="main-content" class="px-6 py-10 md:px-16 border-b border-zinc-800/50 relative overflow-hidden">
+
+    <!-- Grid + bloom background -->
+    <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="gridFadeRad" cx="75%" cy="50%" r="25%">
+          <stop offset="0%"   stop-color="white" stop-opacity="1"/>
+          <stop offset="60%"  stop-color="white" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="gridMask">
+          <rect width="1200" height="630" fill="url(#gridFadeRad)"/>
+        </mask>
+        <filter id="bgBloom" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="72"/>
+        </filter>
+      </defs>
+
+      <!-- Ambient bloom -->
+      <ellipse cx="900" cy="315" rx="320" ry="280"
+        fill="#135ffb" opacity="0.08" filter="url(#bgBloom)"/>
+
+      <!-- Grid — 40px spacing, fades left -->
+      <g mask="url(#gridMask)" opacity="0.22">
+        <line x1="480"  y1="0" x2="480"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="515"  y1="0" x2="515"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="550"  y1="0" x2="550"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="585"  y1="0" x2="585"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="620"  y1="0" x2="620"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="655"  y1="0" x2="655"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="690"  y1="0" x2="690"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="725"  y1="0" x2="725"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="760"  y1="0" x2="760"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="795"  y1="0" x2="795"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="830"  y1="0" x2="830"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="865"  y1="0" x2="865"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="900"  y1="0" x2="900"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="935"  y1="0" x2="935"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="970"  y1="0" x2="970"  y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="1005" y1="0" x2="1005" y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="1040" y1="0" x2="1040" y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="1075" y1="0" x2="1075" y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="1110" y1="0" x2="1110" y2="630" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="0"   x2="1200" y2="0"   stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="35"  x2="1200" y2="35"  stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="70"  x2="1200" y2="70"  stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="105" x2="1200" y2="105" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="140" x2="1200" y2="140" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="175" x2="1200" y2="175" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="210" x2="1200" y2="210" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="245" x2="1200" y2="245" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="280" x2="1200" y2="280" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="315" x2="1200" y2="315" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="350" x2="1200" y2="350" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="385" x2="1200" y2="385" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="420" x2="1200" y2="420" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="455" x2="1200" y2="455" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="490" x2="1200" y2="490" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="525" x2="1200" y2="525" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="560" x2="1200" y2="560" stroke="#3b82f6" stroke-width="0.3"/>
+        <line x1="0" y1="595" x2="1200" y2="595" stroke="#3b82f6" stroke-width="0.3"/>
+      </g>
+    </svg>
+
+    <div class="max-w-300 mx-auto flex flex-col md:flex-row justify-between items-center relative">
+      <div class="flex-7 md:pb-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full mb-15">
           <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           <span class="text-xs font-medium text-green-500">Available for hire</span>
         </div>
-        
-        <h1 class="text-[2.5rem] sm:text-[3.3rem] lg:text-7xl font-bold mb-4 lg:mb-6 leading-tight w-fit mx-auto md:mx-0">
+
+        <h1 class="text-[clamp(2.5rem,4.76vw+3.42px,4.5rem)] font-bold mb-4 lg:mb-6 leading-tight text-center md:text-left">
           Hi, I'm <span class="bg-linear-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent">David R</span>
         </h1>
-        
-        <p class="text-base sm:text-lg lg:text-xl text-zinc-400 mb-12 leading-relaxed max-w-162.5 text-center md:text-left">
+
+        <p class="text-[clamp(16px,0.967vw+8.57px,22.5px)] text-zinc-400 mb-12 leading-relaxed text-center md:text-left">
           Full-Stack Developer who turns complex problems into clean software, and clean software into measurable business wins
         </p>
 
         <div class="flex gap-4 w-fit mx-auto mb-12 md:mx-0">
-          <a 
-            href="mailto:hi@davidr.io" 
+          <a
+            href="mailto:hi@davidr.io"
             class="inline-flex items-center gap-2 px-4 py-3 md:px-6 md:py-3 bg-linear-to-r from-blue-600 to-cyan-500 text-white font-medium rounded hover:opacity-90 transition"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
@@ -387,7 +286,7 @@
             </svg>
             Get in touch
           </a>
-          <a 
+          <a
             href="https://linkedin.com/in/drzengineer"
             target="_blank"
             rel="noopener noreferrer"
@@ -399,81 +298,33 @@
         </div>
       </div>
 
-      <!-- Hero terminal — all defs live in the global block above -->
-      <svg aria-hidden="true" class="hidden md:block flex-5" xmlns="http://www.w3.org/2000/svg" viewBox="80 50 490 460" height="400">
+      <!-- Logo -->
+      <div class="hidden md:flex flex-5 items-center justify-end">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" class="w-[clamp(190px,22.32vw+18.58px,340px)] pb-10" aria-hidden="true">
+          <defs>
+            <linearGradient id="topLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="40%" stop-color="#135ffb66"/>
+              <stop offset="100%" stop-color="#22d3dd"/>
+            </linearGradient>
+            <linearGradient id="botLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="40%" stop-color="#22d3eedd"/>
+              <stop offset="100%" stop-color="#22d3ee"/>
+            </linearGradient>
+            <filter id="logoBloom" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="55"/>
+            </filter>
+            <filter id="logoBlur" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation=".8"/>
+            </filter>
+          </defs>
 
-        <!-- Ambient bloom -->
-        <ellipse cx="325" cy="290" rx="210" ry="210"
-          fill="#135ffb" class="ambE" filter="url(#amb)"/>
-
-        <!-- Glass panel -->
-        <rect x="150" y="68" width="350" height="422" fill="url(#glassFade)"/>
-
-        <!-- Hairlines -->
-        <line x1="130" y1="68"  x2="520" y2="68"  stroke="url(#borderFade)" stroke-width="0.7"/>
-        <line x1="130" y1="490" x2="520" y2="490" stroke="url(#borderFade)" stroke-width="0.7"/>
-
-        <!-- Left brace { — glow pass then crisp pass -->
-        <path d="M 196 62 C 196 62, 136 66, 126 106 L 126 256 C 126 256, 98 268, 98 279 C 98 279, 98 291, 126 303 L 126 452 C 126 452, 136 493, 196 496"
-          fill="none" stroke="url(#gV)" stroke-width="11"
-          stroke-linecap="round" stroke-linejoin="round"
-          filter="url(#bGlow)" class="bG"/>
-        <path d="M 196 62 C 196 62, 136 66, 126 106 L 126 256 C 126 256, 98 268, 98 279 C 98 279, 98 291, 126 303 L 126 452 C 126 452, 136 493, 196 496"
-          fill="none" stroke="url(#gV)" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round"
-          class="bC"/>
-
-        <!-- Right brace } — glow pass then crisp pass -->
-        <path d="M 454 62 C 454 62, 514 66, 524 106 L 524 256 C 524 256, 552 268, 552 279 C 552 279, 552 291, 524 303 L 524 452 C 524 452, 514 493, 454 496"
-          fill="none" stroke="url(#gV)" stroke-width="11"
-          stroke-linecap="round" stroke-linejoin="round"
-          filter="url(#bGlow)" class="bG"/>
-        <path d="M 454 62 C 454 62, 514 66, 524 106 L 524 256 C 524 256, 552 268, 552 279 C 552 279, 552 291, 524 303 L 524 452 C 524 452, 514 493, 454 496"
-          fill="none" stroke="url(#gV)" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round"
-          class="bC"/>
-
-        <!-- Terminal content -->
-        <g clip-path="url(#panelClip)" class="mono">
-          <text x="190" y="104"  font-size="8.5" fill="#93c5fd" class="L01">&gt; boot david_r.exe ▰▰▰▰▰▰▰▰▰▰ [OK]</text>
-          <text x="209" y="119"  font-size="8.5" fill="#93c5fd" font-style="italic" class="L02">&#9492;&#9472; ⇬ [INFO]: operating below base clock until 9am</text>
-          <text x="190" y="134"  font-size="8.5" fill="#93c5fd" class="L03">&gt; kernel: logic_core v&#8734; | conscience: loaded</text>
-          <text x="190" y="148"  font-size="8.5" fill="#93c5fd" class="L04">&gt; entropy: nominal ▰▰▰▰▰▰▰▰▰▰▱ 97%</text>
-          <text x="209" y="161"  font-size="7.5" fill="#334155" font-style="italic" class="L05">&nbsp;&nbsp;&#183;&#183;&#183; resolving remaining 3%&#183;&#183;&#183;</text>
-
-          <text x="190" y="178"  font-size="10"  fill="#93c5fd" class="L07">&gt; mounting modules&#8230;</text>
-          <text x="196" y="192"  font-size="10"  fill="#22d3ee" class="L08">  &#9500;&#9472;&#9472; [&#10003;] react.render &#9670; state: immutable</text>
-          <text x="196" y="206"  font-size="10"  fill="#22d3ee" class="L09">  &#9500;&#9472;&#9472; [&#10003;] api.gateway &nbsp;&#9670; latency: &le;12ms</text>
-          <text x="196" y="220"  font-size="10"  fill="#22d3ee" class="L10">  &#9500;&#9472;&#9472; [&#10003;] db.optimizer &#9670; cache hit rate: &ge;90%</text>
-          <text x="196" y="234"  font-size="10"  fill="#22d3ee" class="L11">  &#9500;&#9472;&#9472; [&#10003;] pipeline.etl &#9670; cycles: automated</text>
-          <text x="196" y="248"  font-size="10"  fill="#3d6b8f" class="L12">  &#9492;&#9472;&#9472; [&#8734;] daemon.watch &#9670; ▰▰▰▰▰▰▰▰▰▰ running</text>
-          <text x="209" y="261"  font-size="9"   fill="#334155" font-style="italic" class="L13">&nbsp;&nbsp;&#183;&#183;&#183; all modules nominal &#183;&#183;&#183;</text>
-
-          <text x="190" y="278"  font-size="10"  fill="#93c5fd" class="L14">&gt; scanning dependency graph&#8230;</text>
-          <text x="196" y="292"  font-size="10"  fill="#93c5fd" class="L15">  &#9500;&#9472; node_modules ▰▰▰▰▰▰▰▰▰▰ [174k pkgs]</text>
-          <text x="196" y="306"  font-size="10"  fill="#93c5fd" class="L16">  &#9474; &nbsp;&#9492;&#9472; ▰▰▰▰▰▰▰▰▰▱ scanning for CVEs</text>
-          <text x="196" y="320"  font-size="10"  fill="#93c5fd" class="L17">  &#9492;&#9472; [&#10003;] zero circular dependencies</text>
-          <text x="209" y="333"  font-size="9"   fill="#475569" class="L18">&nbsp;&nbsp;&nbsp;&#8627; *(technically impressive)*</text>
-
-          <text x="190" y="350"  font-size="10"  fill="#93c5fd" class="L19">&gt; sys.check | Uptime: stable</text>
-          <text x="196" y="364"  font-size="10"  fill="#f59e0b" class="L20">  &#9888; [WARN]: caffeine.reserve below threshold</text>
-          <text x="209" y="377"  font-size="9"   fill="#475569" class="L21">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; *(non-critical. probably.)*</text>
-
-          <text x="190" y="394"  font-size="10"  fill="#93c5fd" class="L22">&gt; operator: david_r ⇒ clearance: full-stack</text>
-          <text x="209" y="409"  font-size="9"   fill="#475569" class="L23">&nbsp;&nbsp;*(complex systems, clean solutions)*</text>
-          <text x="209" y="422"  font-size="9"   fill="#334155" class="L24">&nbsp;&nbsp;&nbsp;&nbsp;&#8627; awaiting instructions&#8230;</text>
-
-          <!-- Prompt — glow pass then crisp pass -->
-          <text x="190" y="457" font-size="10" fill="#135ffb"
-            filter="url(#promptGlow)" class="Lprompt">&gt; ready_to_deploy()</text>
-          <text x="190" y="457" font-size="10" fill="url(#gH)"
-            class="Lprompt">&gt; ready_to_deploy()</text>
-
-          <!-- Blinking cursor -->
-          <rect x="315" y="448" width="2.4" height="12"
-            fill="#1aaee8" rx="1" class="cursor"/>
-        </g>
-      </svg>
+          <!-- Glow fill bloom -->
+          <g transform="translate(16,16) scale(5.6)" filter="url(#logoBlur)"  opacity=".5">
+            <path fill="url(#topLogoFill)" d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z"/>
+            <path fill="url(#botLogoFill)" d="m56.43 66.08l-0.91 0.54c-4.71 2.89-9.98 4.64-15.43 5.26l6.93 6.85h22.08c0-0.01-12.67-12.65-12.67-12.65z"/>
+          </g>
+        </svg>
+      </div>
 
     </div>
   </section>
