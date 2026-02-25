@@ -70,11 +70,8 @@
           <stop offset="40%" stop-color="#22d3eedd"/>
           <stop offset="100%" stop-color="#22d3ee"/>
         </linearGradient>
-        <filter id="logoBloom" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation="55"/>
-        </filter>
         <filter id="logoBlur" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation=".7"/>
+          <feGaussianBlur stdDeviation=".6"/>
         </filter>
 
       <!-- ══ BRAND GRADIENTS ══════════════════════════════════════ -->
@@ -231,11 +228,11 @@
 
     <!-- Grid + bloom background -->
     <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+         viewBox="0 0 1210 470" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       
 
       <!-- Ambient bloom -->
-      <ellipse cx="900" cy="315" rx="320" ry="280"
+      <ellipse cx="880" cy="505" rx="280" ry="400"
         fill="#135ffb" opacity="0.08" filter="url(#bgBloom)"/>
 
       <!-- Grid — 40px spacing, fades left -->
@@ -321,8 +318,12 @@
       <div class="hidden md:flex flex-5 items-center justify-end">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" class="w-[clamp(190px,22.32vw+18.58px,340px)] pb-10" aria-hidden="true">
 
-          <!-- Glow fill bloom -->
+          <!-- fill -->
           <g transform="translate(16,16) scale(5.6)" filter="url(#logoBlur)"  opacity=".5">
+            <path fill="#0a0f1e" d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z"/>
+            <path fill="#0a0f1e" d="m56.43 66.08l-0.91 0.54c-4.71 2.89-9.98 4.64-15.43 5.26l6.93 6.85h22.08c0-0.01-12.67-12.65-12.67-12.65z"/>
+          </g>
+          <g transform="translate(16,16) scale(5.6)" filter="url(#logoBlur)"  opacity=".7">
             <path fill="url(#topLogoFill)" d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z"/>
             <path fill="url(#botLogoFill)" d="m56.43 66.08l-0.91 0.54c-4.71 2.89-9.98 4.64-15.43 5.26l6.93 6.85h22.08c0-0.01-12.67-12.65-12.67-12.65z"/>
           </g>
