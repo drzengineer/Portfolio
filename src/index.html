@@ -105,17 +105,17 @@
         <stop class="svg-brand-to"   offset="0%"   stop-color="#135ffb" stop-opacity="0.18"/>
         <stop class="svg-brand-from" offset="100%" stop-color="#22d3ee" stop-opacity="0.10"/>
       </linearGradient>
-      <linearGradient id="barGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
-        <stop class="svg-brand-to" offset="0%"   stop-color="#135ffb" stop-opacity="0.4"/>
-        <stop class="svg-brand-to" offset="100%" stop-color="#135ffb"/>
+      <linearGradient id="barGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop class="svg-brand-to"   offset="0%"   stop-color="#135ffb" stop-opacity="0.18"/>
+        <stop class="svg-brand-from" offset="100%" stop-color="#22d3ee" stop-opacity="0.10"/>
       </linearGradient>
-      <linearGradient id="barGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
-        <stop class="svg-brand-mid" offset="0%"   stop-color="#1c8af5" stop-opacity="0.4"/>
-        <stop class="svg-brand-mid" offset="100%" stop-color="#1c8af5"/>
+      <linearGradient id="barGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop class="svg-brand-to"   offset="0%"   stop-color="#135ffb" stop-opacity="0.18"/>
+        <stop class="svg-brand-from" offset="100%" stop-color="#22d3ee" stop-opacity="0.10"/>
       </linearGradient>
-      <linearGradient id="barGrad3" x1="0%" y1="100%" x2="0%" y2="0%">
-        <stop class="svg-brand-from" offset="0%"   stop-color="#22d3ee" stop-opacity="0.4"/>
-        <stop class="svg-brand-from" offset="100%" stop-color="#22d3ee"/>
+      <linearGradient id="barGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop class="svg-brand-to"   offset="0%"   stop-color="#135ffb" stop-opacity="0.18"/>
+        <stop class="svg-brand-from" offset="100%" stop-color="#22d3ee" stop-opacity="0.10"/>
       </linearGradient>
 
       <!-- ══ FILTERS ════════════════════════════════════════════== -->
@@ -314,10 +314,10 @@
           </div>
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80" class="basis-1/4">
             <circle cx="40" cy="40" r="30" fill="url(#coinFill)"/>
-            <circle cx="40" cy="40" r="30" fill="none" stroke="url(#coinOuterRing)" stroke-width="2" filter="url(#coinGlow)"/>
+            <circle cx="40" cy="40" r="30" fill="none" stroke="url(#coinOuterRing)" stroke-width="2" filter="none"/>
             <circle cx="40" cy="40" r="23" fill="none" stroke="url(#coinInnerRing)" stroke-width="1.25"/>
             <text x="40" y="52" text-anchor="middle" font-size="34" font-weight="800"
-                  fill="url(#gV)" filter="url(#dollarGlow)" opacity="0.6">$</text>
+                  fill="url(#gV)" filter="none" opacity="0.6">$</text>
             <text x="40" y="52" text-anchor="middle" font-size="34" font-weight="800"
                   fill="url(#gV)">$</text>
           </svg>
@@ -333,7 +333,7 @@
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80" class="basis-1/4">
             <polygon points="47,8 28,44 40,44 33,72 56,36 43,36"
                      fill="url(#boltFill)" stroke="url(#gV)" stroke-width="2"
-                     stroke-linejoin="round" filter="url(#boltGlow)"/>
+                     stroke-linejoin="round" filter="none"/>
           </svg>
         </div>
 
@@ -345,9 +345,9 @@
             <div class="text-xs t-text-tertiary">Manual Data Entry Eliminated</div>
           </div>
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" class="basis-1/4">
-            <rect x="12" y="44" width="14" height="24" rx="2.5" fill="none" stroke="url(#barGrad1)" stroke-width="2" filter="url(#barGlow1)"/>
-            <rect x="33" y="28" width="14" height="40" rx="2.5" fill="none" stroke="url(#barGrad2)" stroke-width="2" filter="url(#barGlow2)"/>
-            <rect x="54" y="12" width="14" height="56" rx="2.5" fill="none" stroke="url(#barGrad3)" stroke-width="2" filter="url(#barGlow3)"/>
+            <rect x="12" y="44" width="14" height="24" rx="2.5" fill="url(#barGrad1)" stroke="url(#gV)" stroke-width="2" filter="none"/>
+            <rect x="33" y="28" width="14" height="40" rx="2.5" fill="url(#barGrad2)" stroke="url(#gV)" stroke-width="2" filter="none"/>
+            <rect x="54" y="12" width="14" height="56" rx="2.5" fill="url(#barGrad3)" stroke="url(#gV)" stroke-width="2" filter="none"/>
           </svg>
         </div>
 
