@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David R | Software Developer</title>
+  <meta name="description" content="Software Developer who turns complex problems into clean software, and clean software into measurable business wins." />
+  <meta property="og:title" content="David R | Software Developer" />
+  <meta property="og:description" content="Software Developer who turns complex problems into clean software, and clean software into measurable business wins." />
+  <meta property="og:url" content="https://davidr.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://davidr.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f7f7f5">
+  <link rel="canonical" href="https://davidr.io/">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    /* ─── pulse (used by the "Available for hire" dot) ─── */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.5; }
+    }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  </style>
+  <script defer src="./main.js"></script>
+</head>
+<body class="min-h-screen bg-stone-50 text-zinc-800">
+
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:px-4 focus:py-2 focus:bg-stone-100 focus:border focus:border-teal-500/50 focus:text-zinc-800 focus:text-sm focus:font-medium focus:rounded-lg focus:outline-none">
+    Skip to main content
+  </a>
+
+  <!--
+    ═══════════════════════════════════════════════════════════════════
+    GLOBAL SVG DEFS
+    ═══════════════════════════════════════════════════════════════════
+  -->
+  <svg aria-hidden="true" focusable="false"
+       style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+
+      <!-- ══ GRID translucent Mask ════════════════════════════════ -->
+
+        <radialGradient id="gridFadeRad" cx="75%" cy="50%" r="25%">
+          <stop offset="0%"   stop-color="white" stop-opacity="1"/>
+          <stop offset="60%"  stop-color="white" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="gridMask">
+          <rect width="1200" height="630" fill="url(#gridFadeRad)"/>
+        </mask>
+        <filter id="bgBloom" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="72"/>
+        </filter>
+
+        <!-- ══ LOGO GRADIENTS & FILTERS ═══════════════════════════ -->
+
+        <linearGradient id="topLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="40%" stop-color="#2abfab"/>
+          <stop offset="100%" stop-color="#17877a"/>
+        </linearGradient>
+        <linearGradient id="botLogoFill" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="40%" stop-color="#2abfabdd"/>
+          <stop offset="100%" stop-color="#17877a"/>
+        </linearGradient>
+        <filter id="logoBlur" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation=".1"/>
+        </filter>
+
+      <!-- ══ BRAND GRADIENTS ══════════════════════════════════════ -->
+
+      <!-- Vertical   teal dark → teal  -->
+      <linearGradient id="gV" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%"   stop-color="#17877a"/>
+        <stop offset="100%" stop-color="#2abfab"/>
+      </linearGradient>
+
+      <!-- Horizontal teal dark → teal  -->
+      <linearGradient id="gH" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#17877a"/>
+        <stop offset="100%" stop-color="#2abfab"/>
+      </linearGradient>
+
+      <!-- Diagonal   teal dark → teal  (logo fill) -->
+      <linearGradient id="logoGradFill" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="40%"  stop-color="#2abfab"/>
+        <stop offset="100%" stop-color="#17877a"/>
+      </linearGradient>
+
+      <!-- ══ METRIC CARD GRADIENTS ════════════════════════════════ -->
+
+      <!-- Coin: radial face fill -->
+      <radialGradient id="coinFill" cx="38%" cy="32%" r="68%">
+        <stop offset="0%"   stop-color="#2abfab" stop-opacity="0.22"/>
+        <stop offset="100%" stop-color="#2abfab" stop-opacity="0.04"/>
+      </radialGradient>
+
+      <!-- Coin: outer ring stroke -->
+      <linearGradient id="coinOuterRing" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"   stop-color="#17877a" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#2abfab" stop-opacity="0.6"/>
+      </linearGradient>
+
+      <!-- Coin: inner ring stroke -->
+      <linearGradient id="coinInnerRing" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"   stop-color="#17877a" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#2abfab" stop-opacity="0.35"/>
+      </linearGradient>
+
+      <!-- Bolt: translucent fill -->
+      <linearGradient id="boltFill" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%"   stop-color="#17877a" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#2abfab" stop-opacity="0.10"/>
+      </linearGradient>
+
+      <!-- Bar chart — three independent strokes -->
+      <linearGradient id="barGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%"   stop-color="#17877a" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#17877a"/>
+      </linearGradient>
+      <linearGradient id="barGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%"   stop-color="#1fa090" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#1fa090"/>
+      </linearGradient>
+      <linearGradient id="barGrad3" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%"   stop-color="#2abfab" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#2abfab"/>
+      </linearGradient>
+
+      <!-- ══ FILTERS ════════════════════════════════════════════== -->
+
+      <!-- Coin ring glow -->
+      <filter id="coinGlow" x="-35%" y="-35%" width="170%" height="170%">
+        <feGaussianBlur stdDeviation="4" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <!-- Dollar sign glow -->
+      <filter id="dollarGlow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="3" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <!-- Bolt glow -->
+      <filter id="boltGlow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="2.5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <!-- Bar chart glows — three blur intensities -->
+      <filter id="barGlow1" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="1.8" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="barGlow2" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="2" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="barGlow3" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="2.5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <!-- Hourglass glow -->
+      <filter id="hourGlow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="1.8" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <!-- ══ ICON SYMBOLS ══════════════════════════════════════════ -->
+
+      <symbol id="icon-github" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </symbol>
+
+      <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </symbol>
+
+    </defs>
+  </svg>
+
+  <!-- Gradient background -->
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-700/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="border-b border-stone-200 sticky top-0 bg-stone-50/80 backdrop-blur-xl z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <svg aria-label="David R logo" role="img" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="36">
+        <path fill="url(#logoGradFill)" d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z"/>
+        <path fill="#17877a" d="m56.43 66.08l-0.91 0.54c-4.71 2.89-9.98 4.64-15.43 5.26l6.93 6.85h22.08c0-0.01-12.67-12.65-12.67-12.65z"/>
+      </svg>
+      <div class="flex gap-4 sm:gap-6 items-center">
+        <a href="#experience" class="text-sm font-medium text-stone-500 hover:text-zinc-800 transition">Experience</a>
+        <a href="#projects" class="text-sm font-medium text-stone-500 hover:text-zinc-800 transition">Projects</a>
+        <a 
+          href="https://github.com/drzengineer" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-2 px-3 py-2 border border-stone-300 text-zinc-800 text-sm font-medium rounded-lg hover:bg-stone-100 transition"
+        >
+          <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-github"/></svg>
+          GitHub
+        </a>
+        <a href="#contact" class="px-4 py-2 text-sm font-medium rounded-lg bg-teal-500 text-white hover:bg-teal-600 transition">
+          Contact
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="main-content" class="px-6 py-10 md:px-16 border-b border-stone-200 relative overflow-hidden">
+
+    <!-- Grid + bloom background -->
+    <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 1210 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+
+      <!-- Ambient bloom -->
+      <ellipse cx="880" cy="505" rx="280" ry="400"
+        fill="#2abfab" opacity="0.05" filter="url(#bgBloom)"/>
+
+      <!-- Grid — 40px spacing, fades left -->
+      <g mask="url(#gridMask)" opacity="0.22">
+        <line x1="480"  y1="0" x2="480"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="515"  y1="0" x2="515"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="550"  y1="0" x2="550"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="585"  y1="0" x2="585"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="620"  y1="0" x2="620"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="655"  y1="0" x2="655"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="690"  y1="0" x2="690"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="725"  y1="0" x2="725"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="760"  y1="0" x2="760"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="795"  y1="0" x2="795"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="830"  y1="0" x2="830"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="865"  y1="0" x2="865"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="900"  y1="0" x2="900"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="935"  y1="0" x2="935"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="970"  y1="0" x2="970"  y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="1005" y1="0" x2="1005" y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="1040" y1="0" x2="1040" y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="1075" y1="0" x2="1075" y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="1110" y1="0" x2="1110" y2="630" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="0"   x2="1200" y2="0"   stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="35"  x2="1200" y2="35"  stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="70"  x2="1200" y2="70"  stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="105" x2="1200" y2="105" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="140" x2="1200" y2="140" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="175" x2="1200" y2="175" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="210" x2="1200" y2="210" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="245" x2="1200" y2="245" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="280" x2="1200" y2="280" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="315" x2="1200" y2="315" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="350" x2="1200" y2="350" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="385" x2="1200" y2="385" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="420" x2="1200" y2="420" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="455" x2="1200" y2="455" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="490" x2="1200" y2="490" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="525" x2="1200" y2="525" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="560" x2="1200" y2="560" stroke="#151515" stroke-width="0.3"/>
+        <line x1="0" y1="595" x2="1200" y2="595" stroke="#151515" stroke-width="0.3"/>
+      </g>
+    </svg>
+
+    <div class="max-w-300 mx-auto flex-wrap flex flex-col md:flex-row justify-between items-center relative">
+
+      <div class="w-full">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-teal-500 rounded-full mb-15">
+          <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+          <span class="text-xs font-medium text-white">Available for hire</span>
+        </div>
+      </div>
+
+      <div class="flex-7 md:pb-8">
+
+        <h1 class="text-[clamp(2.5rem,4.76vw+3.42px,4.5rem)] font-bold mb-4 lg:mb-6 leading-tight text-center md:text-left">
+          Hi, I'm <span class="bg-linear-to-r from-teal-600 via-teal-400 to-teal-700 bg-clip-text text-transparent">David R</span>
+        </h1>
+
+        <p class="text-[clamp(16px,0.967vw+8.57px,22.5px)] text-stone-500 mb-12 leading-relaxed text-center md:text-left">
+          Software Developer specializing in database systems, ETL pipelines, and business applications that deliver measurable ROI
+        </p>
+
+        <div class="flex gap-4 w-fit mx-auto mb-12 md:mx-0">
+          <a
+            href="mailto:hi@davidr.io"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-white text-sm font-medium rounded-lg hover:bg-teal-600 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Get in touch
+          </a>
+          <a
+            href="https://linkedin.com/in/drzengineer"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-3 md:px-5 md:py-2 border border-stone-300 text-zinc-800 font-medium rounded-lg hover:bg-stone-100 transition"
+          >
+            <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="hidden md:flex flex-5 items-center justify-end">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" class="w-[clamp(190px,22.32vw+18.58px,320px)] pb-10" aria-hidden="true">
+
+          <!-- fill -->
+          <g transform="translate(16,16) scale(5.6)" filter="url(#logoBlur)"  opacity="1">
+            <path fill="url(#topLogoFill)" d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z"/>
+            <path fill="#17877a" d="m56.43 66.08l-0.91 0.54c-4.71 2.89-9.98 4.64-15.43 5.26l6.93 6.85h22.08c0-0.01-12.67-12.65-12.67-12.65z"/>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Impact Metrics -->
+  <section class="px-6 py-20 border-b border-stone-200 bg-stone-100/50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-mono bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-12">// Measurable Impact</h2>
+      <div class="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Card 1: Annual Cost Savings -->
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-2">$80K+</div>
+            <div class="text-sm font-medium text-zinc-700 mb-1">Annual Cost Savings</div>
+            <div class="text-xs text-stone-400">Desktop Billing Application</div>
+          </div>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80" class="basis-1/4">
+            <circle cx="40" cy="40" r="30" fill="url(#coinFill)"/>
+            <circle cx="40" cy="40" r="30" fill="none" stroke="url(#coinOuterRing)" stroke-width="2"/>
+            <circle cx="40" cy="40" r="23" fill="none" stroke="url(#coinInnerRing)" stroke-width="1.25"/>
+            <text x="40" y="52" text-anchor="middle" font-size="34" font-weight="800"
+                  fill="url(#gV)" opacity="0.6">$</text>
+            <text x="40" y="52" text-anchor="middle" font-size="34" font-weight="800"
+                  fill="url(#gV)">$</text>
+          </svg>
+        </div>
+
+        <!-- Card 2: Process Acceleration -->
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-2">75%</div>
+            <div class="text-sm font-medium text-zinc-700 mb-1">Process Acceleration</div>
+            <div class="text-xs text-stone-400">Billing Workflow Automated</div>
+          </div>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="80" class="basis-1/4">
+            <polygon points="47,8 28,44 40,44 33,72 56,36 43,36"
+                     fill="url(#gV)" stroke="url(#gV)" stroke-width="2"
+                     stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Card 3: Productivity Increase -->
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-2">40%</div>
+            <div class="text-sm font-medium text-zinc-700 mb-1">Productivity Increase</div>
+            <div class="text-xs text-stone-400">Manual Data Entry Eliminated</div>
+          </div>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" class="basis-1/4">
+            <rect x="12" y="44" width="14" height="24" rx="2.5" fill="url(#barGrad1)"/>
+            <rect x="33" y="28" width="14" height="40" rx="2.5" fill="url(#barGrad2)"/>
+            <rect x="54" y="12" width="14" height="56" rx="2.5" fill="url(#barGrad3)"/>
+          </svg>
+        </div>
+
+        <!-- Card 4: Daily Time Reduction -->
+        <div class="flex justify-between w-full max-w-md md:max-w-lg p-6 lg:pr-2 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="basis-3/4">
+            <div class="text-3xl font-bold bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-2">5 Hour</div>
+            <div class="text-sm font-medium text-zinc-700 mb-1">Runtime Reduction</div>
+            <div class="text-xs text-stone-400">Nightly Batch Query Optimized</div>
+          </div>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="60" height="80" class="basis-1/4" viewBox="0 0 2200 2200">
+            <g>
+              <path fill="url(#gV)" d="M1715.489,827.444c-15.363,5.101-24.113,21.361-19.74,36.947     c15.211,54.22,22.907,110.405,22.907,167.418c0,83.549-16.347,164.56-48.588,240.785     c-31.157,73.66-75.774,139.829-132.614,196.669c-56.84,56.84-123.009,101.457-196.669,132.614     c-76.225,32.24-157.237,48.588-240.786,48.588s-164.56-16.347-240.786-48.588c-73.66-31.157-139.829-75.775-196.669-132.614     c-56.84-56.84-101.457-123.009-132.614-196.669c-32.241-76.225-48.588-157.237-48.588-240.785     c0-83.549,16.347-164.561,48.588-240.786c31.157-73.66,75.774-139.83,132.614-196.669     c56.84-56.839,123.009-101.457,196.669-132.613c76.225-32.241,157.237-48.588,240.786-48.588     c90.725,0,178.105,19.169,259.712,56.974c53.637,24.848,102.784,56.763,146.848,95.28l-49.987,50.554     c-26.233,26.518-9.135,71.591,28.086,74.047l217.822,14.377c26.452,1.744,48.308-20.365,46.269-46.795l-16.823-217.646     c-2.884-37.188-48.133-53.781-74.366-27.252l-50.661,51.236c-16.236-14.503-33.073-28.322-50.456-41.363     c-42.593-31.957-88.62-59.478-136.805-81.8c-100.524-46.568-208.065-70.18-319.639-70.18     c-102.732,0-202.43,20.137-296.323,59.851c-90.655,38.344-172.056,93.221-241.943,163.108     c-69.886,69.887-124.764,151.288-163.108,241.942c-39.713,93.893-59.85,193.591-59.85,296.323     c0,102.732,20.137,202.43,59.85,296.323c38.344,90.655,93.222,172.056,163.108,241.943     c69.887,69.886,151.289,124.764,241.943,163.108c93.893,39.714,193.591,59.85,296.323,59.85s202.43-20.136,296.323-59.85     c90.655-38.344,172.056-93.222,241.943-163.108c69.886-69.887,124.764-151.289,163.108-241.943     c39.714-93.893,59.85-193.591,59.85-296.323c0-71.333-9.822-141.672-29.229-209.543c-4.768-16.674-22.41-26.067-38.869-20.602     L1715.489,827.444z"/>
+              <path fill="url(#gV)" d="M1110.235,582.656h-20.471c-6.816,0-12.342-5.526-12.342-12.342v-89.94     c0-6.816,5.526-12.342,12.342-12.342h20.471c6.816,0,12.342,5.526,12.342,12.342v89.94     C1122.578,577.13,1117.052,582.656,1110.235,582.656z"/>
+              <path fill="url(#gV)" d="M650.846,1021.574v20.471c0,6.816-5.526,12.342-12.342,12.342h-89.94     c-6.816,0-12.342-5.526-12.342-12.342v-20.471c0-6.816,5.526-12.342,12.342-12.342h89.94     C645.321,1009.232,650.846,1014.758,650.846,1021.574z"/>
+              <path fill="url(#gV)" d="M1089.765,1480.964h20.471c6.816,0,12.342,5.526,12.342,12.342v89.94     c0,6.816-5.526,12.342-12.342,12.342h-20.471c-6.816,0-12.342-5.526-12.342-12.342v-89.94     C1077.422,1486.489,1082.948,1480.964,1089.765,1480.964z"/>
+              <path fill="url(#gV)" d="M1549.154,1042.045v-20.471c0-6.816,5.526-12.342,12.342-12.342h89.94     c6.816,0,12.342,5.526,12.342,12.342v20.471c0,6.816-5.526,12.342-12.342,12.342h-89.94     C1554.679,1054.387,1549.154,1048.862,1549.154,1042.045z"/>
+              <path fill="url(#gV)" d="M1358.525,966.755c-4.741,7.178-11.634,13.037-20.218,16.489l-221.939,89.265     c-21.397,8.606-45.804-0.826-55.853-21.585l-185.22-382.627c-10.556-21.804-1.437-48.042,20.371-58.597     c21.807-10.556,48.041-1.436,58.598,20.37l167.371,345.756l183.934-73.98c22.477-9.04,48.028,1.853,57.068,24.331     C1368.225,940.069,1366.197,955.137,1358.525,966.755z"/>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="px-6 py-20 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-mono bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-12">// Technical Skills</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Frontend -->
+        <div class="p-6 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="h-10 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                <path stroke="url(#gV)" stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-xs font-medium text-stone-400 uppercase tracking-wider">Frontend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">React</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">TypeScript</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">JavaScript</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">HTML</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">CSS</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Tailwind CSS</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">XAML</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="p-6 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="h-10 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                <path stroke="url(#gV)" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+            </div>
+            <h3 class="text-xs font-medium text-stone-400 uppercase tracking-wider">Backend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Node</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Express</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Python</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">C# (.NET)</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">RESTful APIs</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Mongoose</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="p-6 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="h-10 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                <path stroke="url(#gV)" stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+              </svg>
+            </div>
+            <h3 class="text-xs font-medium text-stone-400 uppercase tracking-wider">Database</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">T-SQL</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">MongoDB</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">SQL Server</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Schema Design</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Query Optimization</span>
+          </div>
+        </div>
+
+        <!-- Tools & DevOps -->
+        <div class="p-6 bg-linear-to-br from-stone-100 to-stone-100/20 border border-stone-200 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="h-10 flex items-center justify-center">
+              <svg class="w-5 h-5" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path stroke="url(#gV)" stroke-width="2" d="M13.905 3.379A.5.5 0 0114.39 3h3.22a.5.5 0 01.485.379l.689 2.757a.515.515 0 00.341.362c.383.126.755.274 1.115.443a.515.515 0 00.449-.003l2.767-1.383a.5.5 0 01.577.093l2.319 2.319a.5.5 0 01.093.577l-1.383 2.767a.515.515 0 00-.003.449c.127.271.243.549.346.833.053.148.17.265.319.315l2.934.978a.5.5 0 01.342.474v3.28a.5.5 0 01-.342.474l-2.934.978a.515.515 0 00-.32.315 9.937 9.937 0 01-.345.833.515.515 0 00.003.449l1.383 2.767a.5.5 0 01-.093.577l-2.319 2.319a.5.5 0 01-.577.093l-2.767-1.383a.515.515 0 00-.449-.003c-.271.127-.549.243-.833.346a.515.515 0 00-.315.319l-.978 2.934a.5.5 0 01-.474.342h-3.28a.5.5 0 01-.474-.342l-.978-2.934a.515.515 0 00-.315-.32 9.95 9.95 0 01-1.101-.475.515.515 0 00-.498.014l-2.437 1.463a.5.5 0 01-.611-.075l-2.277-2.277a.5.5 0 01-.075-.61l1.463-2.438a.515.515 0 00.014-.498 9.938 9.938 0 01-.573-1.383.515.515 0 00-.362-.341l-2.757-.69A.5.5 0 013 17.61v-3.22a.5.5 0 01.379-.485l2.757-.689a.515.515 0 00.362-.341c.157-.478.35-.94.573-1.383a.515.515 0 00-.014-.498L5.594 8.557a.5.5 0 01.075-.611l2.277-2.277a.5.5 0 01.61-.075l2.438 1.463c.152.091.34.094.498.014a9.938 9.938 0 011.382-.573.515.515 0 00.342-.362l.69-2.757z"/>
+                <circle cx="16" cy="16" r="5" stroke="url(#gV)" stroke-width="2"/>
+                </svg>
+            </div>
+            <h3 class="text-xs font-medium text-stone-400 uppercase tracking-wider">Tools & DevOps</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Git</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Postman</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">JIRA</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">CI/CD</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">ClickOnce</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Render</span>
+            <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Agile/Scrum</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section id="experience" class="px-6 py-20 border-b border-stone-200 bg-stone-100/50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-mono bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-12">// Professional Experience</h2>
+      <div class="space-y-12 mx-auto">
+
+        <!-- Freelance -->
+        <div class="flex flex-col md:flex-row gap-7">
+          <div class="md:flex-1 min-w-35 pt-1 md:text-right">
+            <div class="text-base md:text-sm font-medium text-zinc-700 tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">Freelance Contractor</div>
+            <div class="text-sm md:text-xs font-medium bg-linear-to-r from-teal-600 to-teal-400 text-transparent bg-clip-text mt-1 inline-block tracking-wider md:tracking-normal lg:tracking-wide">Contract · Hybrid</div>
+            <div class="text-sm md:text-xs text-stone-400 mt-1 tracking-wider md:tracking-normal lg:tracking-wide">Melville, NY</div>
+          </div>
+          <div class="flex-7 border-l border-stone-200 pl-7 pb-3">
+            <h3 class="text-lg font-semibold mb-4 md:tracking-wider text-zinc-800">Software Developer</h3>
+            <ul class="space-y-3 mb-6">
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent ">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Delivered HubSpot CRM integration, migrating 10,000+ realtor records and enabling the company's first automated outreach campaigns ahead of schedule</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Eliminated all manual agent data entry by building a bidirectional CRM sync using webhooks for real-time inbound updates and a cron job to push outbound changes</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Reduced failed sync incidents by ~95% by implementing exponential backoff and structured audit logging across all API calls</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Cut query execution time on current-year reports from 8 minutes to 45 seconds by partitioning a 200M-row billing history table by year, requiring no application layer changes</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Reduced nightly batch processing time from 7 hours to under 2 by replacing a slow UNPIVOT operation with CROSS APPLY and introducing indexed views to pre-compute high-cost joins</span>
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">T-SQL</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Python</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">SQL Server</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">HubSpot API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FONAR Corporation -->
+        <div class="flex flex-col md:flex-row gap-7">
+          <div class="md:flex-1 min-w-35 pt-1 md:text-right">
+            <div class="text-base md:text-sm font-medium text-zinc-700 tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">FONAR Corporation</div>
+            <div class="text-sm md:text-xs font-medium bg-linear-to-r from-teal-600 to-teal-400 text-transparent bg-clip-text mt-1 inline-block tracking-wider md:tracking-normal lg:tracking-wide">Full-time · Hybrid</div>
+            <div class="text-sm md:text-xs text-stone-400 mt-1 tracking-wider md:tracking-normal lg:tracking-wide">Melville, NY</div>
+          </div>
+          <div class="flex-7 border-l border-stone-200 pl-7 pb-3">
+            <h3 class="text-lg font-semibold mb-4 md:tracking-wider text-zinc-800">Software Developer</h3>
+            <ul class="space-y-3 mb-6">
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Led greenfield development of a C# WPF application for medical coders and billers to process and submit insurance claims, delivering $80K in annual cost savings, 75% faster billing workflows, and 80% fewer insurance claim rejections</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Achieved full user adoption with zero rollback by conducting UAT with billing and coding staff across 3 departments, identifying and resolving 40+ workflow issues before launch</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Eliminated 15 hours of manual data entry per employee per week by architecting a Python/SSIS ETL pipeline to replace a legacy DOS terminal workflow, increasing department productivity by 40% and raising record completeness from ~60% to 95%</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Reduced data integrity errors from external hospital sources by over 90% by applying defense-in-depth validation: Python schema checks at the application layer and SQL Server constraints at the database layer</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Eliminated up to half a day of operational downtime on pipeline failures by engineering idempotent execution with duplicate detection before every insert and transactional rollback, enabling safe re-execution without manual backup recovery</span>
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">C#</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">.NET</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Python</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">SSIS</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Git</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">WPF</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">SQL Server</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sikorsky -->
+        <div class="flex flex-col md:flex-row gap-7">
+          <div class="md:flex-1 min-w-35 pt-1 md:text-right">
+            <div class="text-base md:text-sm font-medium text-zinc-700 tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">Sikorsky Aircraft</div>
+            <div class="text-sm md:text-xs font-medium bg-linear-to-r from-teal-600 to-teal-400 text-transparent bg-clip-text mt-1 inline-block tracking-wider md:tracking-normal lg:tracking-wide">Contract · Hybrid</div>
+            <div class="text-sm md:text-xs text-stone-400 mt-1 tracking-wider md:tracking-normal lg:tracking-wide"> Bridgeport, CT</div>
+          </div>
+          <div class="flex-7 border-l border-stone-200 pl-7 pb-3">
+            <h3 class="text-lg font-semibold mb-4 md:tracking-wider text-zinc-800">Business Intelligence Developer</h3>
+            <ul class="space-y-3 mb-6">
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Enabled a full platform migration to Tableau and Power BI, fully decommissioning a legacy system, by reverse-engineering an undocumented, German-language Hyperion database schema from scratch</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Built automated dashboards replacing delayed manual reporting with real-time production workflow visibility for operations teams</span>
+              </li>
+              <li class="flex gap-3 text-stone-500">
+                <span aria-hidden="true" class="bg-linear-to-br from-teal-600 to-teal-400 bg-clip-text text-transparent">&#x25B9;&#xFE0E;</span>
+                <span class="text-sm md:text-base">Saved leadership 3 hours per week by consolidating 9 department-specific Hyperion reports into a single parameterized Tableau dashboard with a 10-minute self-service refresh</span>
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Tableau</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Power BI</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">SSRS</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">SQL Server</span>
+              <span class="px-2 py-1.5 text-xs md:px-3 md:text-sm text-zinc-600 bg-stone-50 rounded-lg border border-stone-200">Hyperion</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project -->
+  <section id="projects" class="px-6 py-20 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-mono bg-linear-to-r from-teal-600 to-teal-400 text-transparent inline-block bg-clip-text mb-12">// Featured Work</h2>
+      <div class="max-w-4xl mx-auto bg-stone-100 border border-stone-200 rounded-2xl overflow-hidden">
+
+        <!-- Project Header -->
+        <div class="p-4 md:p-8 border-b border-stone-200">
+          <div class="flex flex-col md:flex-row justify-between">
+            <div class="text-center md:text-left">
+              <h3 class="text-2xl font-bold mb-2 text-zinc-800">Full-Stack Notes Application</h3>
+              <p class="text-stone-500 text-sm md:text-base">End-to-end TypeScript MERN application with a RESTful API, MongoDB Atlas, automated CI/CD on Render, and a custom domain</p>
+            </div>
+            <div class="flex gap-3 mx-auto mt-5 md:mt-0 md:mb-auto md:mx-0">
+              <a 
+                href="https://github.com/drzengineer/NotesApp" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 border border-stone-300 text-zinc-800 text-sm font-medium rounded-lg hover:bg-stone-200 transition"
+              >
+                <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-github"/></svg>
+                Source
+              </a>
+              <a 
+                href="https://notes.davidr.io" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-white text-sm font-medium rounded-lg hover:bg-teal-600 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Launch
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Tabs -->
+        <div class="border-b border-stone-200" role="tablist" aria-label="Project details">
+          <div class="flex w-fit mx-auto md:gap-4">
+            <button type="button" role="tab" aria-selected="true" aria-controls="panel-architecture" id="tab-architecture"
+            class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-teal-500 transition">
+              <span class="bg-linear-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">System Architecture</span>
+            </button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="panel-features" id="tab-features"
+            class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent transition">
+              <span class="bg-linear-to-r from-stone-400 to-stone-500 bg-clip-text text-transparent">Technical Features</span>
+            </button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="panel-stack" id="tab-stack"
+            class="px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent transition">
+              <span class="bg-linear-to-r from-stone-400 to-stone-500 bg-clip-text text-transparent">Technology Stack</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project Content -->
+        <div class="p-4 md:p-8">
+
+          <div role="tabpanel" id="panel-architecture" aria-labelledby="tab-architecture" class="space-y-4">
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Frontend</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">React.js/TypeScript with Vite bundler, deployed as static site on Render</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Backend</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">Node.js/Express RESTful API with CRUD operations</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Database</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">MongoDB Atlas with Mongoose ODM, automatic backups</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">DevOps</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">CI/CD via GitHub integration, separate frontend/backend deployments</div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-features" aria-labelledby="tab-features" class="space-y-4" hidden>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">API Design</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">RESTful endpoints (GET, POST, PUT, DELETE) with error handling</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Security</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">CORS configuration, rate limiting middleware, environment variables</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Styling</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">Tailwind CSS utility-first framework, fully responsive</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Authentication</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">User authentication system in active development</div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-stack" aria-labelledby="tab-stack" class="space-y-4" hidden>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Frontend</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">TypeScript, React, Tailwind CSS, Vite</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Backend</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">TypeScript, Node.js, Express.js, Mongoose</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Database</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">MongoDB, MongoDB Atlas (cloud)</div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 p-4 bg-stone-50 rounded-lg border border-stone-200">
+              <div class="flex-none w-28"><span class="text-sm font-medium text-zinc-700">Deployment</span></div>
+              <div class="flex-1 border-l border-stone-200 pl-4 sm:pl-8 text-xs sm:text-sm text-stone-500 font-mono">Render (hosting), Git (version control), Custom domain</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Project Footer -->
+        <div class="p-4 bg-stone-200/50 border-t border-stone-200">
+          <div class="flex items-center justify-center text-sm">
+            <div class="w-5 h-5 flex items-center text-green-500">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span class="font-medium bg-linear-to-r from-green-500 to-emerald-500 text-transparent inline-block bg-clip-text">Status:</span>
+            <span class="text-right text-stone-400 ml-2">Live in production</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact" class="px-6 py-20 bg-stone-100/50">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4 text-zinc-800">Let's <span class="bg-linear-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">Build</span> Something Together
+      </h2>
+      <p class="text-xl text-stone-500 mb-10 max-w-2xl mx-auto">Have a project in mind? Let's talk.</p>
+      <div class="flex gap-4 w-fit mx-auto">
+        <a 
+          href="mailto:hi@davidr.io"
+          class="inline-flex items-center gap-2 px-4 py-3 md:px-7 md:py-3 bg-teal-500 text-white font-medium rounded-lg hover:bg-teal-600 transition text-sm md:text-base lg:text-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          hi@davidr.io
+        </a>
+        <a 
+          href="https://linkedin.com/in/drzengineer"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-3 md:px-7 md:py-3 border-2 border-stone-300 text-zinc-800 font-medium rounded-lg hover:bg-stone-100 transition text-sm md:text-base lg:text-lg"
+        >
+          <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-stone-200 px-6 py-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-center text-xs md:text-sm text-stone-400">
+        <div class="font-mono">© <span id="footer-year">2026</span> David R</div>
+        <div class="flex gap-6">
+          <span>Software Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

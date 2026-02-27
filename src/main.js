@@ -6,15 +6,90 @@ window.addEventListener("load", () => {
 	}, 100);
 });
 
-// ─── Tab Component ───────────────────────────────────────────────────────────
+// ─── Theme ────────────────────────────────────────────────────────────────────
+
+// SVG gradient stop colors per theme
+const SVG_THEME = {
+	dark: {
+		brandFrom: "#22d3ee", // cyan-400  (light end of blue→cyan gradient)
+		brandMid: "#1c8af5", // mid blue
+		brandTo: "#135ffb", // blue-600  (dark end)
+		logoAccent: "#135ffb",
+		bloomFill: "#135ffb",
+		bloomOpacity: "0.08",
+		gridStroke: "#e9e9e9",
+	},
+	light: {
+		brandFrom: "#2abfab", // teal-400
+		brandMid: "#1fa090", // teal-mid
+		brandTo: "#17877a", // teal-600
+		logoAccent: "#17877a",
+		bloomFill: "#2abfab",
+		bloomOpacity: "0.05",
+		gridStroke: "#151515",
+	},
+};
+
+function applyTheme(theme) {
+	document.documentElement.setAttribute("data-theme", theme);
+
+	// Update <meta name="theme-color">
+	const metaTheme = document.getElementById("meta-theme-color");
+	if (metaTheme) {
+		metaTheme.setAttribute("content", theme === "dark" ? "#09090b" : "#fafaf9");
+	}
+
+	const c = SVG_THEME[theme];
+
+	// Update SVG gradient stops
+	document.querySelectorAll(".svg-brand-from").forEach((el) => {
+		el.setAttribute("stop-color", c.brandFrom);
+	});
+	document.querySelectorAll(".svg-brand-mid").forEach((el) => {
+		el.setAttribute("stop-color", c.brandMid);
+	});
+	document.querySelectorAll(".svg-brand-to").forEach((el) => {
+		el.setAttribute("stop-color", c.brandTo);
+	});
+	document.querySelectorAll(".svg-logo-accent").forEach((el) => {
+		el.setAttribute("fill", c.logoAccent);
+	});
+
+	// Update hero grid lines
+	document.querySelectorAll(".svg-grid-line").forEach((el) => {
+		el.setAttribute("stroke", c.gridStroke);
+	});
+
+	// Update hero bloom ellipse
+	const bloom = document.querySelector(".svg-bloom");
+	if (bloom) {
+		bloom.setAttribute("fill", c.bloomFill);
+		bloom.setAttribute("opacity", c.bloomOpacity);
+	}
+
+	// Re-render active tab so tab classes re-apply
+	const activeIndex = tabs.findIndex(
+		(t) => t.getAttribute("aria-selected") === "true",
+	);
+	if (activeIndex !== -1) activateTab(activeIndex);
+}
+
+function initTheme() {
+	const saved = localStorage.getItem("theme");
+	if (saved === "dark" || saved === "light") return saved;
+	return window.matchMedia("(prefers-color-scheme: dark)").matches
+		? "dark"
+		: "light";
+}
+
+// ─── Tab Component ────────────────────────────────────────────────────────────
 
 const ACTIVE_BTN =
-	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-cyan-500 transition";
+	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-1 tab-border-active transition";
 const INACTIVE_BTN =
-	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-2 border-transparent transition";
+	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-1 border-transparent transition";
 
-const ACTIVE_SPAN =
-	"bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent";
+const ACTIVE_SPAN = "tab-gradient-active bg-clip-text text-transparent";
 const INACTIVE_SPAN =
 	"bg-linear-to-r from-zinc-500 to-zinc-400 bg-clip-text text-transparent";
 
@@ -41,15 +116,12 @@ function activateTab(index) {
 	});
 }
 
-// Set initial state
 activateTab(0);
 
-// Click
 tabs.forEach((tab, i) => {
 	tab.addEventListener("click", () => activateTab(i));
 });
 
-// Keyboard: arrow keys, Home, End
 tablist.addEventListener("keydown", (e) => {
 	const current = tabs.indexOf(document.activeElement);
 	let next = -1;
@@ -66,6 +138,30 @@ tablist.addEventListener("keydown", (e) => {
 	}
 });
 
-// ─── Footer Year ─────────────────────────────────────────────────────────────
+// ─── Theme Toggle Button ──────────────────────────────────────────────────────
+
+const themeToggle = document.getElementById("theme-toggle");
+let currentTheme = initTheme();
+applyTheme(currentTheme);
+
+if (themeToggle) {
+	themeToggle.addEventListener("click", () => {
+		currentTheme = currentTheme === "dark" ? "light" : "dark";
+		localStorage.setItem("theme", currentTheme);
+		applyTheme(currentTheme);
+	});
+}
+
+// Re-apply if system preference changes and user hasn't saved a preference
+window
+	.matchMedia("(prefers-color-scheme: dark)")
+	.addEventListener("change", (e) => {
+		if (!localStorage.getItem("theme")) {
+			currentTheme = e.matches ? "dark" : "light";
+			applyTheme(currentTheme);
+		}
+	});
+
+// ─── Footer Year ──────────────────────────────────────────────────────────────
 const yearEl = document.getElementById("footer-year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();

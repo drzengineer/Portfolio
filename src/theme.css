@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════════════════════
+   THEME VARIABLES
+   Toggle by setting data-theme="dark" or data-theme="light" on <html>.
+   The JS in main.js sets this automatically based on system preference
+   and localStorage.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root,
+[data-theme="dark"] {
+  /* ── Page shell ── */
+  --bg-page:            #09090b;  /* zinc-950  */
+  --bg-section-alt:     rgba(24,24,27,0.15); /* zinc-900/15 */
+  --text-primary:       #ffffff;
+  --text-secondary:     #a1a1aa;  /* zinc-400  */
+  --text-tertiary:      #71717a;  /* zinc-500  */
+  --text-strong:        #e4e4e7;  /* zinc-200  */
+  --text-medium:        #d4d4d8;  /* zinc-300  */
+
+  /* ── Borders ── */
+  --border-default:     rgba(39,39,42,0.5);  /* zinc-800/50 */
+  --border-card:        #27272a;  /* zinc-800  */
+  --border-input:       #3f3f46;  /* zinc-700  */
+  --border-input-faint: rgba(63,63,70,0.5); /* zinc-700/50 */
+
+  /* ── Surfaces ── */
+  --bg-card-from:       #18181b;  /* zinc-900  */
+  --bg-card-to:         rgba(24,24,27,0.2);
+  --bg-chip:            rgba(39,39,42,0.5); /* zinc-800/50 */
+  --bg-header:          rgba(9,9,11,0.8);   /* zinc-950/80 */
+  --bg-project-shell:   #18181b;  /* zinc-900  */
+  --bg-panel-row:       rgba(9,9,11,0.5);   /* zinc-950/50 */
+  --bg-footer-strip:    rgba(9,9,11,0.5);
+
+  /* ── Hover states ── */
+  --hover-nav:          #27272a;  /* zinc-800  */
+  --hover-subtle:       #18181b;  /* zinc-900  */
+
+  /* ── Brand gradient (text + icons) ── */
+  --brand-from:         #2563eb;  /* blue-600  */
+  --brand-to:           #06b6d4;  /* cyan-500  */
+  --brand-via:          #06b6d4;  /* cyan-500  */
+
+  /* ── CTA button ── */
+  --btn-cta-bg:         linear-gradient(to right, #2563eb, #06b6d4);
+  --btn-cta-text:       #ffffff;
+  --btn-cta-hover:      opacity 0.9; /* handled with hover:opacity-90 */
+
+  /* ── Tab active border ── */
+  --tab-border-active:  #71717a;  /* zinc-500  */
+
+  /* ── Background blobs ── */
+  --blob-1:             rgba(37,99,235,0.1);  /* blue-600/10 */
+  --blob-2:             rgba(30,64,175,0.1);  /* blue-800/10 */
+
+  /* ── Skip link / focus ring ── */
+  --skip-bg:            #18181b;
+  --skip-border:        rgba(6,182,212,0.5);  /* cyan-500/50 */
+  --skip-text:          #ffffff;
+
+  /* ── Meta theme-color (injected by JS) ── */
+  --meta-theme:         #09090b;
+}
+
+[data-theme="light"] {
+  /* ── Page shell ── */
+  --bg-page:            #fafaf9;  /* stone-50  */
+  --bg-section-alt:     rgba(245,245,244,0.5); /* stone-100/50 */
+  --text-primary:       #27272a;  /* zinc-800  */
+  --text-secondary:     #78716c;  /* stone-500 */
+  --text-tertiary:      #a8a29e;  /* stone-400 */
+  --text-strong:        #3f3f46;  /* zinc-700  */
+  --text-medium:        #3f3f46;  /* zinc-700  */
+
+  /* ── Borders ── */
+  --border-default:     #e7e5e4;  /* stone-200 */
+  --border-card:        #e7e5e4;  /* stone-200 */
+  --border-input:       #d6d3d1;  /* stone-300 */
+  --border-input-faint: #e7e5e4;  /* stone-200 */
+
+  /* ── Surfaces ── */
+  --bg-card-from:       #f5f5f4;  /* stone-100 */
+  --bg-card-to:         rgba(245,245,244,0.2);
+  --bg-chip:            #fafaf9;  /* stone-50  */
+  --bg-header:          rgba(250,250,249,0.8); /* stone-50/80 */
+  --bg-project-shell:   #f5f5f4;  /* stone-100 */
+  --bg-panel-row:       #fafaf9;  /* stone-50  */
+  --bg-footer-strip:    rgba(214,211,208,0.5); /* stone-200/50 */
+
+  /* ── Hover states ── */
+  --hover-nav:          #f5f5f4;  /* stone-100 */
+  --hover-subtle:       #f5f5f4;  /* stone-100 */
+
+  /* ── Brand gradient (text + icons) ── */
+  --brand-from:         #0d9488;  /* teal-600  */
+  --brand-to:           #2dd4bf;  /* teal-400  */
+  --brand-via:          #2dd4bf;  /* teal-400  */
+
+  /* ── CTA button ── */
+  --btn-cta-bg:         #14b8a6;  /* teal-500 flat */
+  --btn-cta-text:       #ffffff;
+
+  /* ── Tab active border ── */
+  --tab-border-active:  #d6d3d1;  /* stone-300 */
+
+  /* ── Background blobs ── */
+  --blob-1:             rgba(20,184,166,0.05);  /* teal-500/5  */
+  --blob-2:             rgba(15,118,110,0.05);  /* teal-700/5  */
+
+  /* ── Skip link / focus ring ── */
+  --skip-bg:            #f5f5f4;
+  --skip-border:        rgba(20,184,166,0.5);   /* teal-500/50 */
+  --skip-text:          #27272a;
+
+  /* ── Meta theme-color ── */
+  --meta-theme:         #fafaf9;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   UTILITY CLASSES  (replace the Tailwind color classes that vary)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Page */
+.t-bg-page         { background-color: var(--bg-page); }
+.t-bg-section-alt  { background-color: var(--bg-section-alt); }
+.t-text-primary    { color: var(--text-primary); }
+.t-text-secondary  { color: var(--text-secondary); }
+.t-text-tertiary   { color: var(--text-tertiary); }
+.t-text-strong     { color: var(--text-strong); }
+.t-text-medium     { color: var(--text-medium); }
+
+/* Borders */
+.t-border          { border-color: var(--border-default); }
+.t-border-card     { border-color: var(--border-card); }
+.t-border-input    { border-color: var(--border-input); }
+.t-border-faint    { border-color: var(--border-input-faint); }
+
+/* Surfaces */
+.t-bg-card         { background: linear-gradient(to bottom right, var(--bg-card-from), var(--bg-card-to)); }
+.t-bg-chip         { background-color: var(--bg-chip); }
+.t-bg-header       { background-color: var(--bg-header); }
+.t-bg-project      { background-color: var(--bg-project-shell); }
+.t-bg-panel-row    { background-color: var(--bg-panel-row); }
+.t-bg-footer-strip { background-color: var(--bg-footer-strip); }
+
+/* Hover */
+.t-hover-nav:hover    { background-color: var(--hover-nav); }
+.t-hover-subtle:hover { background-color: var(--hover-subtle); }
+
+/* Brand gradient — text */
+.t-brand-text {
+  background-image: linear-gradient(to right, var(--brand-from), var(--brand-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block; /* required for bg-clip to work */
+}
+/* Brand gradient — text with via (hero h1) */
+.t-brand-text-via {
+  background-image: linear-gradient(to right, var(--brand-from), var(--brand-via), var(--brand-from));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+/* Brand gradient — diagonal (bullet arrows, exp labels) */
+.t-brand-text-diag {
+  background-image: linear-gradient(to bottom right, var(--brand-from), var(--brand-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* CTA button */
+.t-btn-cta {
+  background: var(--btn-cta-bg);
+  color: var(--btn-cta-text);
+}
+.t-btn-cta:hover { opacity: 0.9; }
+
+/* Tab */
+.tab-border-active  { border-color: var(--tab-border-active); }
+.tab-gradient-active {
+  background-image: linear-gradient(to right, var(--brand-from), var(--brand-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Background blobs */
+.t-blob-1 { background-color: var(--blob-1); }
+.t-blob-2 { background-color: var(--blob-2); }
+
+/* Skip link */
+.t-skip-link:focus {
+  background-color: var(--skip-bg);
+  border-color: var(--skip-border);
+  color: var(--skip-text);
+}
+
+/* Smooth theme transition */
+*, *::before, *::after {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+/* But NOT transitions on transforms/opacity to avoid killing animations */
