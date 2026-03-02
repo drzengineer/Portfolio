@@ -204,9 +204,9 @@
   <!-- Header -->
   <header class="border-b t-border sticky top-0 t-bg-header backdrop-blur-xl z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <button id="theme-toggle" aria-label="Toggle theme">
+      <button type="button" id="theme-toggle" aria-label="Toggle theme">
         <svg aria-label="David R logo" role="img" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"
-          height="36">
+          height="36" >
           <path fill="url(#topLogoFill)"
             d="m35.89 1.46h-11.1-23.32v21.88 11.09l7.78 7.17h22.2l-7.36-7.17v-12.05h11.8c6.1 0 10.81 6.03 10.81 12.13v0.04c0 6.1-4.71 11.57-10.81 11.57h-11.1-11.1-12.22v21.54l33.79 0.13c6.22 0 12.64-1.82 17.69-4.92 9.57-5.86 16.36-16.44 16.36-28.42v0.07c0-18.31-15.11-33.06-33.42-33.06z" />
           <path class="svg-logo-accent" fill="#135ffb"
@@ -217,7 +217,7 @@
         <a href="#experience"
           class="text-sm font-medium t-text-secondary hover:t-text-primary transition">Experience</a>
         <a href="#projects" class="text-sm font-medium t-text-secondary hover:t-text-primary transition">Projects</a>
-        <a href="https://github.com/drzengineer" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/drzengineer" aria-label="Go to GitHub" target="_blank" rel="noopener noreferrer"
           class="hidden sm:inline-flex items-center px-2 py-2 text-sm font-medium rounded-lg t-hover-nav transition">
           <svg class="w-5 h-5" aria-hidden="true">
             <use href="#icon-github" />
@@ -344,7 +344,7 @@
   <!-- Impact Metrics -->
   <section class="px-6 py-20 border-b t-border t-bg-section-alt">
     <div class="max-w-7xl mx-auto">
-      <h2 class="font-mono t-brand-text mb-12">// Measurable Impact</h2>
+      <h2 class="font-mono t-brand-text-via mb-12">// Measurable Impact</h2>
       <div class="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Card 1: Annual Cost Savings -->
@@ -439,7 +439,7 @@
   <!-- Technical Skills -->
   <section class="px-6 py-20 border-b t-border">
     <div class="max-w-7xl mx-auto">
-      <h2 class="font-mono t-brand-text mb-12">// Technical Skills</h2>
+      <h2 class="font-mono t-brand-text-via mb-12">// Technical Skills</h2>
       <div class="grid md:grid-cols-2 gap-6">
 
         <!-- Frontend -->
@@ -534,7 +534,7 @@
         <div class="p-6 t-bg-card border t-border-card rounded-lg">
           <div class="flex items-center gap-3 mb-4">
             <div class="h-10 rounded-lg flex items-center justify-center">
-              <svg class="w-5 h-5" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <svg class="w-5 h-5" alt="fefe" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                 <path stroke="url(#gV)" stroke-width="2"
                   d="M13.905 3.379A.5.5 0 0114.39 3h3.22a.5.5 0 01.485.379l.689 2.757a.515.515 0 00.341.362c.383.126.755.274 1.115.443a.515.515 0 00.449-.003l2.767-1.383a.5.5 0 01.577.093l2.319 2.319a.5.5 0 01.093.577l-1.383 2.767a.515.515 0 00-.003.449c.127.271.243.549.346.833.053.148.17.265.319.315l2.934.978a.5.5 0 01.342.474v3.28a.5.5 0 01-.342.474l-2.934.978a.515.515 0 00-.32.315 9.937 9.937 0 01-.345.833.515.515 0 00.003.449l1.383 2.767a.5.5 0 01-.093.577l-2.319 2.319a.5.5 0 01-.577.093l-2.767-1.383a.515.515 0 00-.449-.003c-.271.127-.549.243-.833.346a.515.515 0 00-.315.319l-.978 2.934a.5.5 0 01-.474.342h-3.28a.5.5 0 01-.474-.342l-.978-2.934a.515.515 0 00-.315-.32 9.95 9.95 0 01-1.101-.475.515.515 0 00-.498.014l-2.437 1.463a.5.5 0 01-.611-.075l-2.277-2.277a.5.5 0 01-.075-.61l1.463-2.438a.515.515 0 00.014-.498 9.938 9.938 0 01-.573-1.383.515.515 0 00-.362-.341l-2.757-.69A.5.5 0 013 17.61v-3.22a.5.5 0 01.379-.485l2.757-.689a.515.515 0 00.362-.341c.157-.478.35-.94.573-1.383a.515.515 0 00-.014-.498L5.594 8.557a.5.5 0 01.075-.611l2.277-2.277a.5.5 0 01.61-.075l2.438 1.463c.152.091.34.094.498.014a9.938 9.938 0 011.382-.573.515.515 0 00.342-.362l.69-2.757z" />
                 <circle cx="16" cy="16" r="5" stroke="url(#gV)" stroke-width="2" />
@@ -566,19 +566,19 @@
   <!-- Experience Timeline -->
   <section id="experience" class="px-6 py-20 border-b t-border t-bg-section-alt">
     <div class="max-w-7xl mx-auto">
-      <h2 class="font-mono t-brand-text mb-12">// Professional Experience</h2>
+      <h2 class="font-mono t-brand-text-via mb-12">// Professional Experience</h2>
       <div class="space-y-12 mx-auto">
 
         <!-- Freelance -->
         <div class="flex flex-col md:flex-row gap-7">
           <div class="md:flex-1 min-w-35 pt-1 md:text-right">
             <div
-              class="text-base md:text-sm font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
+              class="text-base md:text-lg font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
               Freelance Contractor</div>
             <div
-              class="text-sm md:text-xs font-medium t-brand-text mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
+              class="text-sm font-medium t-brand-text-via mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
               Contract · Hybrid</div>
-            <div class="text-sm md:text-xs t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
+            <div class="text-sm t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
               Melville, NY</div>
           </div>
           <div class="flex-7 border-l t-border-card pl-7 pb-3">
@@ -631,12 +631,12 @@
         <div class="flex flex-col md:flex-row gap-7">
           <div class="md:flex-1 min-w-35 pt-1 md:text-right">
             <div
-              class="text-base md:text-sm font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
+              class="text-base font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
               FONAR Corporation</div>
             <div
-              class="text-sm md:text-xs font-medium t-brand-text mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
+              class="text-sm font-medium t-brand-text-via mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
               Full-time · Hybrid</div>
-            <div class="text-sm md:text-xs t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
+            <div class="text-sm t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
               Melville, NY</div>
           </div>
           <div class="flex-7 border-l t-border-card pl-7 pb-3">
@@ -697,12 +697,12 @@
         <div class="flex flex-col md:flex-row gap-7">
           <div class="md:flex-1 min-w-35 pt-1 md:text-right">
             <div
-              class="text-base md:text-sm font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
+              class="text-base font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
               Sikorsky Aircraft</div>
             <div
-              class="text-sm md:text-xs font-medium t-brand-text mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
+              class="text-sm font-medium t-brand-text-via mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
               Contract · Hybrid</div>
-            <div class="text-sm md:text-xs t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
+            <div class="text-sm t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
               Bridgeport, CT</div>
           </div>
           <div class="flex-7 border-l t-border-card pl-7 pb-3">
@@ -750,7 +750,7 @@
   <!-- Featured Project -->
   <section id="projects" class="px-6 py-20 border-b t-border">
     <div class="max-w-7xl mx-auto">
-      <h2 class="font-mono t-brand-text mb-12">// Featured Work</h2>
+      <h2 class="font-mono t-brand-text-via mb-12">// Featured Work</h2>
       <div class="max-w-4xl mx-auto t-bg-project border t-border-card rounded-2xl overflow-hidden">
 
         <!-- Project Header -->

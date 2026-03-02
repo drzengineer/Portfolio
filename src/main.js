@@ -20,11 +20,11 @@ const SVG_THEME = {
 		gridStroke: "#e9e9e9",
 	},
 	light: {
-		brandFrom: "#2abfab", // teal-400
-		brandMid: "#1fa090", // teal-mid
-		brandTo: "#17877a", // teal-600
-		logoAccent: "#17877a",
-		bloomFill: "#2abfab",
+		brandFrom: "#22d3ee", // cyan-400
+		brandMid: "#06b6d4", // cyan-500
+		brandTo: "#0891b2", // cyan-600
+		logoAccent: "#0891b2",
+		bloomFill: "#06b6d4",
 		bloomOpacity: "0.05",
 		gridStroke: "#151515",
 	},
@@ -68,18 +68,14 @@ function applyTheme(theme) {
 	}
 
 	// Re-render active tab so tab classes re-apply
-	const activeIndex = tabs.findIndex(
-		(t) => t.getAttribute("aria-selected") === "true",
-	);
+	const activeIndex = tabs.findIndex((t) => t.getAttribute("aria-selected") === "true");
 	if (activeIndex !== -1) activateTab(activeIndex);
 }
 
 function initTheme() {
 	const saved = localStorage.getItem("theme");
 	if (saved === "dark" || saved === "light") return saved;
-	return window.matchMedia("(prefers-color-scheme: dark)").matches
-		? "dark"
-		: "light";
+	return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 // ─── Tab Component ────────────────────────────────────────────────────────────
@@ -90,14 +86,11 @@ const INACTIVE_BTN =
 	"px-3 py-2 sm:p-4 md:px-6 md:py-4 text-sm font-medium border-b-1 border-transparent transition";
 
 const ACTIVE_SPAN = "tab-gradient-active bg-clip-text text-transparent";
-const INACTIVE_SPAN =
-	"bg-linear-to-r from-zinc-500 to-zinc-400 bg-clip-text text-transparent";
+const INACTIVE_SPAN = "bg-linear-to-r from-zinc-500 to-zinc-400 bg-clip-text text-transparent";
 
 const tablist = document.querySelector('[role="tablist"]');
 const tabs = [...tablist.querySelectorAll('[role="tab"]')];
-const panels = tabs.map((tab) =>
-	document.getElementById(tab.getAttribute("aria-controls")),
-);
+const panels = tabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
 
 function activateTab(index) {
 	tabs.forEach((tab, i) => {
@@ -110,9 +103,7 @@ function activateTab(index) {
 		if (span) span.className = isActive ? ACTIVE_SPAN : INACTIVE_SPAN;
 	});
 	panels.forEach((panel, i) => {
-		i === index
-			? panel.removeAttribute("hidden")
-			: panel.setAttribute("hidden", "");
+		i === index ? panel.removeAttribute("hidden") : panel.setAttribute("hidden", "");
 	});
 }
 
@@ -153,14 +144,12 @@ if (themeToggle) {
 }
 
 // Re-apply if system preference changes and user hasn't saved a preference
-window
-	.matchMedia("(prefers-color-scheme: dark)")
-	.addEventListener("change", (e) => {
-		if (!localStorage.getItem("theme")) {
-			currentTheme = e.matches ? "dark" : "light";
-			applyTheme(currentTheme);
-		}
-	});
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+	if (!localStorage.getItem("theme")) {
+		currentTheme = e.matches ? "dark" : "light";
+		applyTheme(currentTheme);
+	}
+});
 
 // ─── Footer Year ──────────────────────────────────────────────────────────────
 const yearEl = document.getElementById("footer-year");
