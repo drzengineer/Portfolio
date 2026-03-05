@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
 const SVG_THEME = {
 	dark: {
 		brandFrom: "#22d3ee", // cyan-400  (light end of blue→cyan gradient)
-		brandMid: "#1c8af5", // mid blue
+		metric: "#1c8af5", // mid blue
 		brandTo: "#135ffb", // blue-600  (dark end)
 		logoAccent: "#135ffb",
 		bloomFill: "#135ffb",
@@ -21,7 +21,7 @@ const SVG_THEME = {
 	},
 	light: {
 		brandFrom: "#8B5CF6", // violet-500
-		brandMid: "#7C6FF7", // mid indigo-violet
+		metric: "#7C6FF700", // mid indigo-violet
 		brandTo: "#6366F1", // indigo-500
 		logoAccent: "#6366F1",
 		bloomFill: "#7C6FF7",
@@ -45,11 +45,11 @@ function applyTheme(theme) {
 	document.querySelectorAll(".svg-brand-from").forEach((el) => {
 		el.setAttribute("stop-color", c.brandFrom);
 	});
-	document.querySelectorAll(".svg-brand-mid").forEach((el) => {
-		el.setAttribute("stop-color", c.brandMid);
-	});
 	document.querySelectorAll(".svg-brand-to").forEach((el) => {
 		el.setAttribute("stop-color", c.brandTo);
+	});
+	document.querySelectorAll(".svg-metric-to").forEach((el) => {
+		el.setAttribute("stop-color", c.metric);
 	});
 	document.querySelectorAll(".svg-logo-accent").forEach((el) => {
 		el.setAttribute("fill", c.logoAccent);
