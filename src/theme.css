@@ -5,6 +5,10 @@
    and localStorage.
    ═══════════════════════════════════════════════════════════════════ */
 
+html {
+	font-family: "Inter", sans-serif;
+}
+
 :root,
 [data-theme="dark"] {
 	/* ── Page shell ── */
