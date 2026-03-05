@@ -68,7 +68,7 @@ html {
 [data-theme="light"] {
 	/* ── Page shell ── */
 	--bg-page: #fafafa;
-	--bg-section-alt: #f4f4f6;
+	--bg-section-alt: #f4f4f626;
 	--text-primary: #0f0f14;
 	--text-secondary: #5b5b6e;
 	--text-tertiary: #9898a8;

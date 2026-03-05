@@ -281,7 +281,7 @@
   <!-- Impact Metrics -->
   <section class="px-6 py-20 border-b t-border t-bg-section-alt">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-sm font-semibold t-brand-text-via uppercase tracking-widest mb-12">Measurable Impact</h2>
+      <h2 class="text-sm font-semibold t-brand-text-via uppercase tracking-widest mb-12">Results</h2>
       <div class="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Card 1: Annual Cost Savings -->
@@ -511,189 +511,175 @@
   </div>
 </section>
 
-  <!-- Experience Timeline -->
-  <section id="experience" class="px-6 py-20 border-b t-border t-bg-section-alt">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-sm font-semibold t-brand-text-via uppercase tracking-widest mb-12">Professional Experience</h2>
-      <div class="space-y-12 mx-auto">
+<!-- Impact Timeline -->
+<section id="experience" class="px-4 py-24 border-b t-border t-bg-section-alt relative overflow-visible">
 
-        <!-- Freelance -->
-        <div class="flex flex-col md:flex-row gap-7">
-          <div class="md:flex-1 min-w-35 pt-1 md:text-right">
-            <div
-              class="text-base md:text-sm font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
-              Freelance Contractor</div>
-            <div
-              class="text-sm font-medium t-brand-text-via mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
-              Contract · Hybrid</div>
-            <div class="text-sm t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
-              Melville, NY</div>
+  <!-- Decorative tick SVG — spans full section height, sits behind cards -->
+  <svg
+    class="absolute left-1/2 top-0 -translate-x-1/2 w-4 h-full pointer-events-none hidden md:block"
+    style="z-index: 0"
+    preserveAspectRatio="xMidYMid meet"
+    aria-hidden="true">
+    <line
+      x1="8" y1="0" x2="8" y2="100%"
+      stroke="var(--brand-via)"
+      stroke-width="1.1"
+      stroke-dasharray="7 22"
+      opacity="0.3"
+    />
+  </svg>
+
+  <div class="max-w-7xl mx-auto relative" style="z-index: 1">
+    <h2 class="text-sm font-semibold t-brand-text-via uppercase tracking-widest mb-20 text-center">Experience</h2>
+
+    <div class="relative">
+      <div class="space-y-16">
+
+        <!-- 1: $80K — LEFT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">$80K+</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Annual Cost Savings</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Built a C# WPF billing application that automated insurance claim processing end-to-end, delivering $80K in annual savings and 75% faster workflows.</p>
+              <div class="flex flex-wrap gap-2 mt-4 justify-end">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">C#</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">.NET</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">WPF</span>
+              </div>
+            </div>
           </div>
-          <div class="flex-7 border-l t-border-card pl-7 pb-3">
-            <h3 class="text-lg font-semibold mb-4 md:tracking-wider">Software Developer</h3>
-            <ul class="space-y-3 mb-6">
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Delivered HubSpot CRM integration, migrating 10,000+ realtor records
-                  and enabling the company's first automated outreach campaigns ahead of schedule</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Eliminated all manual agent data entry by building a bidirectional
-                  CRM sync using webhooks for real-time inbound updates and a cron job to push outbound changes</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Reduced failed sync incidents by ~95% by implementing exponential
-                  backoff and structured audit logging across all API calls</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Cut query execution time on current-year reports from 8 minutes to 45
-                  seconds by partitioning a 200M-row billing history table by year, requiring no application layer
-                  changes</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Reduced nightly batch processing time from 7 hours to under 2 by
-                  replacing a slow UNPIVOT operation with CROSS APPLY and introducing indexed views to pre-compute
-                  high-cost joins</span>
-              </li>
-            </ul>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">T-SQL</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">Python</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">SQL
-                Server</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">HubSpot
-                API</span>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3 hidden md:block"></div>
+        </div>
+
+        <!-- 2: 80% — RIGHT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1 hidden md:block"></div>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">80%</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Fewer Claim Rejections</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Engineered automated validation logic into the claim submission workflow, reducing insurance rejection rates by 80% through real-time rule enforcement at the application layer.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">C#</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">SQL Server</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">.NET</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- FONAR Corporation -->
-        <div class="flex flex-col md:flex-row gap-7">
-          <div class="md:flex-1 min-w-35 pt-1 md:text-right">
-            <div
-              class="text-base md:text-sm font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
-              FONAR Corporation</div>
-            <div
-              class="text-sm font-medium t-brand-text-via mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
-              Full-time · Hybrid</div>
-            <div class="text-sm t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
-              Melville, NY</div>
+        <!-- 3: ~95% — LEFT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">~95%</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Reduction in Failed Syncs</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Implemented exponential backoff and structured audit logging across all API calls in a bidirectional HubSpot CRM sync, cutting sync failures by 95%.</p>
+              <div class="flex flex-wrap gap-2 mt-4 justify-end">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">Node.js</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">HubSpot API</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">Webhooks</span>
+              </div>
+            </div>
           </div>
-          <div class="flex-7 border-l t-border-card pl-7 pb-3">
-            <h3 class="text-lg font-semibold mb-4 md:tracking-wider">Software Developer</h3>
-            <ul class="space-y-3 mb-6">
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Led greenfield development of a C# WPF application for medical coders
-                  and billers to process and submit insurance claims, delivering $80K in annual cost savings, 75% faster
-                  billing workflows, and 80% fewer insurance claim rejections</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Achieved full user adoption with zero rollback by conducting UAT with
-                  billing and coding staff across 3 departments, identifying and resolving 40+ workflow issues before
-                  launch</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Eliminated 15 hours of manual data entry per employee per week by
-                  architecting a Python/SSIS ETL pipeline to replace a legacy DOS terminal workflow, increasing
-                  department productivity by 40% and raising record completeness from ~60% to 95%</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Reduced data integrity errors from external hospital sources by over
-                  90% by applying defense-in-depth validation: Python schema checks at the application layer and SQL
-                  Server constraints at the database layer</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Eliminated up to half a day of operational downtime on pipeline
-                  failures by engineering idempotent execution with duplicate detection before every insert and
-                  transactional rollback, enabling safe re-execution without manual backup recovery</span>
-              </li>
-            </ul>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">C#</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">.NET</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">Python</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">SSIS</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">Git</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">WPF</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">SQL
-                Server</span>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3 hidden md:block"></div>
+        </div>
+
+        <!-- 4: 43,000+ — RIGHT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1 hidden md:block"></div>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">43,000+</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Records Migrated</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Delivered a HubSpot CRM integration migrating 43,000+ realtor records and enabling the client's first automated outreach campaigns — delivered ahead of schedule.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">Python</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">HubSpot API</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">REST APIs</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Sikorsky -->
-        <div class="flex flex-col md:flex-row gap-7">
-          <div class="md:flex-1 min-w-35 pt-1 md:text-right">
-            <div
-              class="text-base md:text-sm font-medium t-text-strong tracking-wider md:tracking-normal lg:tracking-wide whitespace-nowrap">
-              Sikorsky Aircraft</div>
-            <div
-              class="text-sm font-medium t-brand-text-via mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
-              Contract · Hybrid</div>
-            <div class="text-sm t-text-tertiary mt-1 tracking-wider md:tracking-normal lg:tracking-wide">
-              Bridgeport, CT</div>
+        <!-- 5: 8min → 45sec — LEFT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">8 min → 45 sec</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Query Execution Time</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Partitioned a 200M-row billing history table by year, cutting report query time from 8 minutes to 45 seconds with zero application layer changes.</p>
+              <div class="flex flex-wrap gap-2 mt-4 justify-end">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">T-SQL</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">SQL Server</span>
+              </div>
+            </div>
           </div>
-          <div class="flex-7 border-l t-border-card pl-7 pb-3">
-            <h3 class="text-lg font-semibold mb-4 md:tracking-wider">Business Intelligence Developer</h3>
-            <ul class="space-y-3 mb-6">
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Enabled a full platform migration to Tableau and Power BI, fully
-                  decommissioning a legacy system, by reverse-engineering an undocumented, German-language Hyperion
-                  database schema from scratch</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Built automated dashboards replacing delayed manual reporting with
-                  real-time production workflow visibility for operations teams</span>
-              </li>
-              <li class="flex gap-3 t-text-secondary">
-                <span aria-hidden="true" class="t-brand-text-diag">&#x25B9;&#xFE0E;</span>
-                <span class="text-sm md:text-base">Saved leadership 3 hours per week by consolidating 9
-                  department-specific Hyperion reports into a single parameterized Tableau dashboard with a 10-minute
-                  self-service refresh</span>
-              </li>
-            </ul>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">Tableau</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">Power
-                BI</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">SSRS</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">SQL
-                Server</span>
-              <span
-                class="px-2 py-1.5 text-xs md:px-3 md:text-xs t-text-base t-bg-chip rounded-lg border t-border-faint">Hyperion</span>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3 hidden md:block"></div>
+        </div>
+
+        <!-- 6: 7hrs → 2hrs — RIGHT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1 hidden md:block"></div>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">7 hrs → 2 hrs</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Nightly Batch Processing</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Replaced a slow UNPIVOT operation with CROSS APPLY and introduced indexed views to pre-compute high-cost joins, cutting overnight runtime by 70%.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">T-SQL</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">SQL Server</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7: 40% — LEFT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">40%</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Productivity Increase</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Eliminated 15 hours of manual data entry per employee per week by replacing a legacy DOS terminal workflow with a Python/SSIS ETL pipeline.</p>
+              <div class="flex flex-wrap gap-2 mt-4 justify-end">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">Python</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">SSIS</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">SQL Server</span>
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3 hidden md:block"></div>
+        </div>
+
+        <!-- 8: 90% — RIGHT -->
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-full md:w-1/2 md:pr-16 order-2 md:order-1 hidden md:block"></div>
+          <div class="hidden md:flex w-4 h-4 rounded-full z-10 shrink-0 order-2 relative" style="background: var(--brand-via); box-shadow: 0 0 0 4px var(--bg-section-alt), 0 0 10px var(--brand-via)"></div>
+          <div class="w-full md:w-1/2 md:pl-16 order-3">
+            <div class="p-6 t-bg-card border t-border-card rounded-xl">
+              <div class="text-4xl font-bold t-brand-text mb-1">90%+</div>
+              <div class="text-sm font-semibold t-text-strong mb-2 uppercase tracking-wide">Data Integrity Error Reduction</div>
+              <p class="text-sm t-text-secondary leading-relaxed">Applied defense-in-depth validation with Python schema checks at the application layer and SQL Server constraints at the database layer against external hospital data sources.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">Python</span>
+                <span class="px-2 py-1 text-xs t-text-medium t-bg-chip rounded border t-border-faint">SQL Server</span>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Featured Project -->
   <section id="projects" class="px-6 py-20 border-b t-border">
