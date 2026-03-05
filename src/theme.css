@@ -67,56 +67,56 @@ html {
 
 [data-theme="light"] {
 	/* ── Page shell ── */
-	--bg-page: #fafaf9; /* stone-50 */
-	--bg-section-alt: #f4f3f1; /* warm light stone */
-	--text-primary: #27272a; /* zinc-800 */
-	--text-secondary: #78716c; /* stone-500 */
-	--text-tertiary: #a8a29e; /* stone-400 */
-	--text-strong: #3f3f46; /* zinc-700 */
-	--text-medium: #3f3f46; /* zinc-700 */
+	--bg-page: #fafafa;
+	--bg-section-alt: #f4f4f6;
+	--text-primary: #0f0f14;
+	--text-secondary: #5b5b6e;
+	--text-tertiary: #9898a8;
+	--text-strong: #0f0f14;
+	--text-medium: #4338ca;
 
 	/* ── Borders ── */
-	--border-default: #e2e6e8; /* cyan-kissed stone */
-	--border-card: #e7e5e4; /* stone-200 */
-	--border-input: #cad2d5; /* cyan-tinted stone-300 */
-	--border-input-faint: #e2e6e8; /* matches border-default */
+	--border-default: #e4e4ec;
+	--border-card: #e4e4ec;
+	--border-input: #cfcfdb;
+	--border-input-faint: rgba(99, 102, 241, 0.2);
 
 	/* ── Surfaces ── */
-	--bg-card-from: #ffffff; /* pure white */
-	--bg-card-to: rgba(250, 250, 249, 0.3);
-	--bg-chip: #f5f4f2; /* lightened mid-stone */
-	--bg-header: rgba(250, 250, 249, 0.88);
-	--bg-project-shell: #f0eee9; /* warm linen */
-	--bg-panel-row: #fafaf9; /* stone-50 */
-	--bg-footer-strip: rgba(214, 211, 208, 0.6); /* warm stone */
+	--bg-card-from: #ffffff;
+	--bg-card-to: rgba(250, 250, 250, 0.3);
+	--bg-chip: rgba(99, 102, 241, 0.08);
+	--bg-header: rgba(250, 250, 250, 0.85);
+	--bg-project-shell: #f0f0f5;
+	--bg-panel-row: #fafafa;
+	--bg-footer-strip: rgba(210, 210, 220, 0.5);
 
 	/* ── Hover states ── */
-	--hover-nav: #eeece8; /* warm stone hover */
-	--hover-subtle: #f4f3f1; /* matches section-alt */
+	--hover-nav: #ebebf2;
+	--hover-subtle: #f4f4f6;
 
 	/* ── Brand gradient (text + icons) ── */
-	--brand-from: #0891b2; /* cyan-600 */
-	--brand-to: #22d3ee; /* cyan-400 */
-	--brand-via: #06b6d4; /* cyan-500 */
+	--brand-from: #6366f1;
+	--brand-to: #8b5cf6;
+	--brand-via: #7c6ff7;
 
 	/* ── CTA button ── */
-	--btn-cta-bg: #06b6d4; /* cyan-500 */
+	--btn-cta-bg: #6366f1;
 	--btn-cta-text: #ffffff;
 
 	/* ── Tab active border ── */
-	--tab-border-active: #06b6d4; /* cyan-500 */
+	--tab-border-active: #6366f1;
 
 	/* ── Background blobs ── */
-	--blob-1: rgba(34, 211, 238, 0.08); /* cyan-400/8 */
-	--blob-2: rgba(8, 145, 178, 0.06); /* cyan-600/6 */
+	--blob-1: rgba(99, 102, 241, 0.07);
+	--blob-2: rgba(139, 92, 246, 0.05);
 
 	/* ── Skip link / focus ring ── */
-	--skip-bg: #f4f3f1;
-	--skip-border: rgba(6, 182, 212, 0.55); /* cyan-500/55 */
-	--skip-text: #27272a;
+	--skip-bg: #f4f4f6;
+	--skip-border: rgba(99, 102, 241, 0.5);
+	--skip-text: #0f0f14;
 
 	/* ── Meta theme-color ── */
-	--meta-theme: #fafaf9;
+	--meta-theme: #fafafa;
 }
 
 /* ═══════════════════════════════════════════════════════════════════

@@ -20,11 +20,11 @@ const SVG_THEME = {
 		gridStroke: "#e9e9e9",
 	},
 	light: {
-		brandFrom: "#22d3ee", // cyan-400
-		brandMid: "#06b6d4", // cyan-500
-		brandTo: "#0891b2", // cyan-600
-		logoAccent: "#0891b2",
-		bloomFill: "#06b6d4",
+		brandFrom: "#8B5CF6", // violet-500
+		brandMid: "#7C6FF7", // mid indigo-violet
+		brandTo: "#6366F1", // indigo-500
+		logoAccent: "#6366F1",
+		bloomFill: "#7C6FF7",
 		bloomOpacity: "0.05",
 		gridStroke: "#151515",
 	},
