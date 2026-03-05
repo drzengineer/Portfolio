@@ -21,7 +21,7 @@ const SVG_THEME = {
 	},
 	light: {
 		brandFrom: "#8B5CF6", // violet-500
-		metric: "#7C6FF700", // mid indigo-violet
+		metric: "#7C6FF780", // mid indigo-violet
 		brandTo: "#6366F1", // indigo-500
 		logoAccent: "#6366F1",
 		bloomFill: "#7C6FF7",
