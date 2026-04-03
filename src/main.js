@@ -67,9 +67,19 @@ function applyTheme(theme) {
 		bloom.setAttribute("opacity", c.bloomOpacity);
 	}
 
-	// Re-render active tab so tab classes re-apply
-	const activeIndex = tabs.findIndex((t) => t.getAttribute("aria-selected") === "true");
-	if (activeIndex !== -1) activateTab(activeIndex);
+	// Re-render active tabs so tab classes re-apply on theme change
+	document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
+		const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+		const activeIndex = tabs.findIndex((t) => t.getAttribute("aria-selected") === "true");
+		if (activeIndex !== -1) {
+			tabs.forEach((tab, i) => {
+				const isActive = i === activeIndex;
+				tab.className = isActive ? ACTIVE_BTN : INACTIVE_BTN;
+				const span = tab.querySelector("span");
+				if (span) span.className = isActive ? ACTIVE_SPAN : INACTIVE_SPAN;
+			});
+		}
+	});
 }
 
 function initTheme() {
@@ -88,46 +98,50 @@ const INACTIVE_BTN =
 const ACTIVE_SPAN = "tab-gradient-active bg-clip-text text-transparent";
 const INACTIVE_SPAN = "bg-linear-to-r from-zinc-500 to-zinc-400 bg-clip-text text-transparent";
 
-const tablist = document.querySelector('[role="tablist"]');
-const tabs = [...tablist.querySelectorAll('[role="tab"]')];
-const panels = tabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
+function initTabGroup(tablist) {
+	const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+	const panels = tabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
 
-function activateTab(index) {
+	function activateTab(index) {
+		tabs.forEach((tab, i) => {
+			const isActive = i === index;
+			tab.className = isActive ? ACTIVE_BTN : INACTIVE_BTN;
+			tab.setAttribute("aria-selected", String(isActive));
+			tab.tabIndex = isActive ? 0 : -1;
+
+			const span = tab.querySelector("span");
+			if (span) span.className = isActive ? ACTIVE_SPAN : INACTIVE_SPAN;
+		});
+		panels.forEach((panel, i) => {
+			if (!panel) return;
+			i === index ? panel.removeAttribute("hidden") : panel.setAttribute("hidden", "");
+		});
+	}
+
+	activateTab(0);
+
 	tabs.forEach((tab, i) => {
-		const isActive = i === index;
-		tab.className = isActive ? ACTIVE_BTN : INACTIVE_BTN;
-		tab.setAttribute("aria-selected", String(isActive));
-		tab.tabIndex = isActive ? 0 : -1;
-
-		const span = tab.querySelector("span");
-		if (span) span.className = isActive ? ACTIVE_SPAN : INACTIVE_SPAN;
+		tab.addEventListener("click", () => activateTab(i));
 	});
-	panels.forEach((panel, i) => {
-		i === index ? panel.removeAttribute("hidden") : panel.setAttribute("hidden", "");
+
+	tablist.addEventListener("keydown", (e) => {
+		const current = tabs.indexOf(document.activeElement);
+		let next = -1;
+
+		if (e.key === "ArrowRight") next = (current + 1) % tabs.length;
+		if (e.key === "ArrowLeft") next = (current - 1 + tabs.length) % tabs.length;
+		if (e.key === "Home") next = 0;
+		if (e.key === "End") next = tabs.length - 1;
+
+		if (next !== -1) {
+			e.preventDefault();
+			activateTab(next);
+			tabs[next].focus();
+		}
 	});
 }
 
-activateTab(0);
-
-tabs.forEach((tab, i) => {
-	tab.addEventListener("click", () => activateTab(i));
-});
-
-tablist.addEventListener("keydown", (e) => {
-	const current = tabs.indexOf(document.activeElement);
-	let next = -1;
-
-	if (e.key === "ArrowRight") next = (current + 1) % tabs.length;
-	if (e.key === "ArrowLeft") next = (current - 1 + tabs.length) % tabs.length;
-	if (e.key === "Home") next = 0;
-	if (e.key === "End") next = tabs.length - 1;
-
-	if (next !== -1) {
-		e.preventDefault();
-		activateTab(next);
-		tabs[next].focus();
-	}
-});
+document.querySelectorAll('[role="tablist"]').forEach(initTabGroup);
 
 // ─── Theme Toggle Button ──────────────────────────────────────────────────────
 
